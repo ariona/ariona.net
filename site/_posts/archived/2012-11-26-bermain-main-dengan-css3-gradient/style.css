@@ -1,0 +1,65 @@
+.boxdemo{
+    width:150px;
+    height:150px;
+    max-width:100%;
+    display:inline;
+    resize:auto;
+    border:none;
+    -webkit-user-select:none;
+}
+.boxdemo#sampel1{
+    background-image:-webkit-linear-gradient(top, #FF0000, blue);
+    background-image:-moz-linear-gradient(top, #FF0000, blue);  
+    background-image:-ms-linear-gradient(top, #FF0000, blue);   
+    background-image:-o-linear-gradient(top, #FF0000, blue);    
+    background-image:linear-gradient(top, #FF0000, blue);           
+}
+.boxdemo#sampel2{
+    background-image:-webkit-linear-gradient(45deg, red, blue);
+    background-image:-moz-linear-gradient(45deg, red, blue);
+    background-image:-ms-linear-gradient(45deg, red, blue);
+    background-image:-o-linear-gradient(45deg, red, blue);
+    background-image:linear-gradient(45deg, red, blue);
+}
+.boxdemo#sampel3{
+    background-image:-webkit-linear-gradient(left, red,orange,yellow,lime,green,blue);
+    background-image:-moz-linear-gradient(left, red,orange,yellow,lime,green,blue);
+    background-image:-ms-linear-gradient(left, red,orange,yellow,lime,green,blue);
+    background-image:-o-linear-gradient(left, red,orange,yellow,lime,green,blue);
+    background-image:linear-gradient(left, red,orange,yellow,lime,green,blue);
+}
+.boxdemo#sampel4{
+    background-image:-webkit-radial-gradient(center,circle,red,blue);
+    background-image:-moz-radial-gradient(center,circle,red,blue);
+    background-image:-ms-radial-gradient(center,circle,red,blue);
+    background-image:-o-radial-gradient(center,circle,red,blue);
+    background-image:radial-gradient(center,circle,red,blue);
+}
+.boxdemo#sampel5{
+    background-image:-webkit-radial-gradient(top left,circle farthest-side,red,blue);
+    background-image:-moz-radial-gradient(top left,circle farthest-side,red,blue);
+    background-image:-ms-radial-gradient(top left,circle farthest-side,red,blue);
+    background-image:-o-radial-gradient(top left,circle farthest-side,red,blue);
+    background-image:radial-gradient(top left,circle farthest-side,red,blue);
+}
+.boxdemo#sampel6{
+    background-image:-webkit-repeating-linear-gradient(left, green 10%, yellow 20%);
+    background-image:-moz-repeating-linear-gradient(left, green 10%, yellow 20%);
+    background-image:-ms-repeating-linear-gradient(left, green 10%, yellow 20%);
+    background-image:-o-repeating-linear-gradient(left, green 10%, yellow 20%);
+    background-image:repeating-linear-gradient(left, green 10%, yellow 20%);
+}
+.boxdemo#sampel7{
+    background-image:-webkit-repeating-radial-gradient(center, green 10%, yellow 20%);
+    background-image:-moz-repeating-radial-gradient(center, green 10%, yellow 20%);
+    background-image:-ms-repeating-radial-gradient(center, green 10%, yellow 20%);
+    background-image:-o-repeating-radial-gradient(center, green 10%, yellow 20%);
+    background-image:repeating-radial-gradient(center, green 10%, yellow 20%);
+}
+.boxdemo#sampel8{
+    background-image:-webkit-linear-gradient(left,red 20%,green 50%,yellow 95%, blue 100%);
+    background-image:-moz-linear-gradient(left,red 20%,green 50%,yellow 95%, blue 100%);
+    background-image:-ms-linear-gradient(left,red 20%,green 50%,yellow 95%, blue 100%);
+    background-image:-o-linear-gradient(left,red 20%,green 50%,yellow 95%, blue 100%);
+    background-image:linear-gradient(left,red 20%,green 50%,yellow 95%, blue 100%);
+}
