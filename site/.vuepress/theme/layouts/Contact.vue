@@ -9,23 +9,24 @@
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      name="contact"
       @submit.prevent="handleSubmit">
 
       <input type="hidden" name="form-name" value="contact" />
 
       <div class="field">
         <label>Your name</label>
-        <input v-model="form.name" type="text" placeholder="What is your name">
+        <input name="name" v-model="form.name" type="text" placeholder="What is your name">
       </div>
 
       <div class="field">
         <label>Your email</label>
-        <input v-model="form.email" type="text" placeholder="What is your email">
+        <input name="email" v-model="form.email" type="text" placeholder="What is your email">
       </div>
 
       <div class="field">
         <label>Service</label>
-        <select v-model="form.service">
+        <select name="service" v-model="form.service">
           <option value="Just wanted to say hi">Just wanted to say hi</option>
           <option value="Need help with a Project">Need help with a Project</option>
           <option value="Long term partnership">Long term partnership</option>
@@ -34,7 +35,7 @@
       </div>
       <div class="field">
         <label>Message</label>
-        <textarea v-model="form.message" rows="5" placeholder="What's your message?"></textarea>
+        <textarea name="email" v-model="form.message" rows="5" placeholder="What's your message?"></textarea>
       </div>
 
       <div class="field text-right">
@@ -77,7 +78,7 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
-      axios.post("/contact/",
+      axios.post("/contact.html",
         this.encode({
           "form-name": "contact",
           ...this.form
