@@ -39,14 +39,8 @@ module.exports = {
       ]
     }
   },
-  head: [
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
-    // ['script', { src: "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" }],
-    // ['script', {}, '(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: "ca-pub-4513514396693466",  enable_page_level_ads: true });'],
-  ],
   plugins: [
     'demo-block',
-    ['check-md'],
     ['vuepress-plugin-reading-time'],
     [
       '@vuepress/blog',

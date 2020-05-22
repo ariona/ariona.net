@@ -4,14 +4,28 @@
       <div class="section-subtitle">Contact</div>
       <h2 class="section-title">Get in touch — let’s work together.</h2>
     </div>
-    <div class="form">
+    <form
+      class="form"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      @submit.prevent="handleSubmit">
+
+      <input type="hidden" name="form-name" value="contact" />
+
       <div class="field">
         <label>Your name</label>
-        <input v-model="name" type="text" placeholder="What is your name">
+        <input v-model="form.name" type="text" placeholder="What is your name">
       </div>
+
+      <div class="field">
+        <label>Your email</label>
+        <input v-model="form.email" type="text" placeholder="What is your email">
+      </div>
+
       <div class="field">
         <label>Service</label>
-        <select v-model="service">
+        <select v-model="form.service">
           <option value="Just wanted to say hi">Just wanted to say hi</option>
           <option value="Need help with a Project">Need help with a Project</option>
           <option value="Long term partnership">Long term partnership</option>
@@ -20,30 +34,62 @@
       </div>
       <div class="field">
         <label>Message</label>
-        <textarea v-model="message" rows="5" placeholder="What's your message?"></textarea>
+        <textarea v-model="form.message" rows="5" placeholder="What's your message?"></textarea>
       </div>
 
       <div class="field text-right">
-        <button @click="composeEmail">Send message</button>
+        <button type="submit">Send message</button>
       </div>
-    </div>
+
+      <div class="message" v-if="message">{{message}}</div>
+    </form>
 
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data() {
     return {
-      name: '',
-      service: 'Need help with a Project',
-      message: ''
+      form : {
+        name: '',
+        email: '',
+        service: 'Need help with a Project',
+        message: ''
+      },
+      message: ""
     }
   },
   methods: {
     composeEmail() {
       const subject = `${this.name} – ${this.service}`
       window.open(`mailto:helloariona@gmail.com?subject=${subject}&body=${this.message}`)
+    },
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit () {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+      };
+      axios.post(
+        "/",
+        this.encode({
+          "form-name": "contact",
+          ...this.form
+        })
+      )
+      .then(() => {
+        this.message = 'Your message has been sent, i\'ll get back to you as soon as possible'
+      })
+      .catch(() => {
+        this.message = 'Failed sending your message, please try again in a minute'
+      })
     }
   }
 }

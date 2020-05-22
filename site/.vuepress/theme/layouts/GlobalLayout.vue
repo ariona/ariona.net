@@ -73,4 +73,24 @@ export default {
     height: 100%;
   }
 }
+
+.section-title {
+  margin: 0;
+  border-bottom: none;
+  font-size: 3em;
+  font-weight: 900;
+
+  // &:before{
+  //   content: "/ ";
+  //   color: var(--accentColor);
+  // }
+}
+.section-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.spacer {
+  height: 100px;
+}
 </style>

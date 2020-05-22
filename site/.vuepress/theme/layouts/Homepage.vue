@@ -191,26 +191,4 @@ export default {
   text-shadow: 0 30px 100px rgba(0,0,0,.08);
   user-select: none;
 }
-
-.section-title {
-  margin: 0;
-  border-bottom: none;
-  font-size: 3em;
-  font-weight: 900;
-
-  // &:before{
-  //   content: "/ ";
-  //   color: var(--accentColor);
-  // }
-}
-.section-subtitle {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-}
-
-
-
-.spacer {
-  height: 100px;
-}
 </style>
