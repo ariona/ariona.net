@@ -77,12 +77,12 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
-      axios.post(
-        "/",
+      axios.post("/",
         this.encode({
           "form-name": "contact",
           ...this.form
-        })
+        }),
+        axiosConfig
       )
       .then(() => {
         this.message = 'Your message has been sent, i\'ll get back to you as soon as possible'
