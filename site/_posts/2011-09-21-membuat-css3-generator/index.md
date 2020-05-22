@@ -37,7 +37,7 @@ Setelah kamu download jQuery ColorPicker, Copy seluruh image yang terdapat di da
 
 Untuk markup pertama-tama kita mulai dari Head, kita akan menggunakan [jQuery](/category/tutorials/javascript/), jQueryUI, dan jQuery ColorPicker, disini saya akan mengambil file jQuery dan jQueryUI langsung dari CDN nya google .
 
-```
+```html
 <head>
     <title>CSS3 Generator</title>;
     <link rel="stylesheet" type="text/css" href="css/style.css />
@@ -54,7 +54,7 @@ File style.css adalah file css yang akan kita buat, sedangkan jquery-ui.css adal
 
 Selanjutnya untuk markup Generator dan hasil Generate kita buat markupnya seperti berikut :
 
-```
+```html
 <div id="wrapper">
     <div id="generator">
         <p>Offset X, menggeser Shadow secara horizontal</p>
@@ -78,7 +78,7 @@ Selanjutnya untuk markup Generator dan hasil Generate kita buat markupnya sepert
 
 Buat file CSS baru dan simpan di folder css yang telah kita buat sebelumnya. lalu kita mulai memberikan style untuk markup yang telah kita buat
 
-```
+```css
 body{
     background:#f6f6f6;
     color:#555555;
@@ -120,7 +120,7 @@ oke, styling beres, untuk slider tidak perlu kita beri style karena telah dilaku
 
 Pertama-tama, buat file gen.js dan simpan di folder js yang telah kita buat sebelumnya, lalu kita mulai dengan pendeklarasian beberapa variable dan array
 
-```
+```js
 var cssGen  = '';
 var cssProp = new Array(); //array untuk menyimpan value css property
 
@@ -132,7 +132,7 @@ cssProp['color']="#000000";
 
 Seluruh css hasil generate akan kita simpan di dalam variable cssGen, cssGen ini berisi sekumpulan properti css beserta nilainya yang akan kita generate berdasar slider dan input box yang telah kita buat.
 
-```
+```js
 function generateCSS(){
     cssGen   = ".box { ";
     cssGen  += "   box-shadow:" + cssProp['offsetX'] + " " + cssProp['offsetY'] + " " + cssProp['Blur'] + " " + cssProp['color'] + ";";
@@ -151,7 +151,7 @@ fungsi generateCSS berfungsi untuk men-generate properti CSS box-shadow beserta 
 
 Selanjutnya kita akan memberikan fungsi terhadap slider-slider agar menyimpan nilainya ke dalam array yang telah kita buat.
 
-```
+```js
 $(function() {
     $("head").append("<style type='text/css'></style>"); // kita tambahkan style embed yang akan kita ganti dengan css hasil generate
     generateCSS(); // untuk memanggil fungsi generateCSS

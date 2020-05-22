@@ -13,10 +13,10 @@ categories:
 
 Tutorial ini merupakan bagian dari seri bermain-main dengan CSS3. Membahas berbagai property-property dari CSS3, cara penggunaannya dan contoh kasus.
 
-- [Bermain-main dengan CSS3 Text-shadow](/?p=1256)
-- [Bermain-main dengan CSS3 Box-shadow](/?p=1275)
+- [Bermain-main dengan CSS3 Text-shadow](/bermain-main-dengan-css3-text-shadow/)
+- Bermain-main dengan CSS3 Box-shadow
 
-Property [box-shadow](/?p=1275) hampir sama dengan [text-shadow](/?p=1256), hanya saja property ini digunakan untuk memberikan Shadow pada suatu element. Yup, pada dasarnya setiap element pada HTML direpresentasikan sebagai box, jadi kita bisa memberikan shadow pada elemen-elemen tersebut.
+Property `box-shadow` hampir sama dengan [text-shadow](/bermain-main-dengan-css3-text-shadow/), hanya saja property ini digunakan untuk memberikan Shadow pada suatu element. Yup, pada dasarnya setiap element pada HTML direpresentasikan sebagai box, jadi kita bisa memberikan shadow pada elemen-elemen tersebut.
 
 Contoh penggunaan normal box-shadow adalah seperti syntax berikut :
 
@@ -24,13 +24,17 @@ Contoh penggunaan normal box-shadow adalah seperti syntax berikut :
 box-shadow:offset-X offset-Y Blur-Radius Color;
 ```
 
-Penjelasan masing-masing property sama dengan [text-shadow](/?p=1256) :), sebagai contoh penggunaan box-shadow :
+Penjelasan masing-masing property sama dengan [text-shadow](/bermain-main-dengan-css3-text-shadow/) :), sebagai contoh penggunaan box-shadow :
 
-box-shadow:10px 10px 5px black;
+```css
+box-shadow: 10px 10px 5px black;
+```
 
 Anda juga dapat menggunakan beberapa shadow sekaligus (Multiple Shadow). caranya adalah dengan menambahkan koma untuk memisahkan shadow 1 dengan lainnya.
 
+```css
 box-shadow:10px 10px 5px black, -10px -10px 5px black;
+```
 
 Itulah penggunaan normal box-shadow. Dengan bantuan selector :before/:after kita bisa memanipulasi Shadow untuk membuat efek-efek tertentu. :)
 
@@ -39,17 +43,16 @@ Itulah penggunaan normal box-shadow. Dengan bantuan selector :before/:after kita
 ## Persiapan
 
 Pertama-tama kita buat terlebih dahulu empat objek(element) yang akan kita tambahkan efek shadow, beri nama class "box" dan "type1" s/d "type4.
-
-Blur
-
-Lengkung Kiri
-
-Lengkung Kanan-Kiri
-
-Lengkung Tengah
+```html
+<div class="box type1">Blur</div>
+<div class="box type2">Lengkung Kiri</div>
+<div class="box type3">Lengkung Kanan-Kiri</div>
+<div class="box type4">Lengkung Tengah</div>
+```
 
 selanjutnya kita beri style untuk box tersebut
 
+```css
 .box{
     width: 456px;
     background:-webkit-gradient(linear,0 0,0 100%,from(#2e9aef),to(#1186e3));
@@ -63,6 +66,7 @@ selanjutnya kita beri style untuk box tersebut
     text-align:center;
     text-shadow:0 1px 1px rgba(255,255,255,.3);
 }
+```
 
 ## Efek Blur
 
@@ -70,6 +74,7 @@ selanjutnya kita beri style untuk box tersebut
 
 Efek pertama yang akan kita buat adalah efek blur. property box-shadow bisa digunakan beberapa kali (multiple shadow), jadi kalo kita menyusunnya mulai dari blur yang rendah ke yang tinggi, akan terciptalah efek blur.
 
+```css
 .type1{
 -webkit-box-shadow:0 0 2px #2e9aef,
                    0 0 4px #2e9aef,
@@ -84,6 +89,7 @@ box-shadow        :0 0 2px #2e9aef,
                    0 0 6px #2e9aef,
                    0 0 8px #2e9aef;
 }
+```
 
 Penulisan tidak harus seperti di atas (garis baru) . contoh di atas agar memperjelas bahwa kita punya 4 shadow dengan tingkat blur yang berurutan.
 
@@ -93,6 +99,7 @@ Penulisan tidak harus seperti di atas (garis baru) . contoh di atas agar memperj
 
 Efek yang akan kita buat, tidak langsung pada elementnya melainkan pada selector Before/After (kurang paham? baca tutorial berikut Menambahkan Paper-Clip pada Elemen). triknya adalah dengan memutar selector before/after beberapa derajat .
 
+```
 .type2:before{
     bottom:5px;
     content:' ';
@@ -108,6 +115,7 @@ Efek yang akan kita buat, tidak langsung pada elementnya melainkan pada selector
     -moz-transform:rotate(-2deg);
     transform:rotate(-2deg);
 }
+```
 
 ## Efek Lengkung Kiri-Kanan
 
@@ -115,6 +123,7 @@ Efek yang akan kita buat, tidak langsung pada elementnya melainkan pada selector
 
 Sudah mengerti cara buat Efek sebelumnya? yang satu ini pasti mudah, tinggal buat lagi satu shadow , sekarang pake selector :before dan :after . pertama-tama, tinggal Copy style sebelumnya pada selector :before dan :after.
 
+```
 .type3:before, .type3:after{
     bottom:5px;
     content:' ';
@@ -130,15 +139,18 @@ Sudah mengerti cara buat Efek sebelumnya? yang satu ini pasti mudah, tinggal bua
     -moz-transform:rotate(-2deg);
     transform:rotate(-2deg);
 }
+```
 
 nah, untuk yang lengkungan sebelah kanan, tambahkan style berikut :
 
+```
 .type3:after{
     right:10px;
     -webkit-transform:rotate(2deg);
     -moz-transform:rotate(2deg);
     transform:rotate(2deg);
 }
+```
 
 ## Efek Lengkung Tengah
 
@@ -146,14 +158,15 @@ nah, untuk yang lengkungan sebelah kanan, tambahkan style berikut :
 
 Shadow yang terakhir adalah efek ilusi kertas yang melengkung ke atas. triknya simple, tinggal menggunakan properti border-radius:
 
+```
 .type4:after{
     width:80%;
     height:20px;
-    -webkit-border-bottom-left-radius:50% 10px; /\* Memberikan efek lengkung panjang
+    -webkit-border-bottom-left-radius:50% 10px; /* Memberikan efek lengkung panjang */
     -webkit-border-bottom-right-radius:50% 10px;
-    -moz-border-radius-bottomleft:50% 10px; /\* Memberikan efek lengkung panjang
+    -moz-border-radius-bottomleft:50% 10px; /* Memberikan efek lengkung panjang */
     -moz-border-radius-bottomright:50% 10px;
-    border-bottom-left-radius:50% 10px; /\* Memberikan efek lengkung panjang
+    border-bottom-left-radius:50% 10px; /* Memberikan efek lengkung panjang */
     border-bottom-right-radius:50% 10px;
     left:5%;
     bottom:0;
@@ -162,6 +175,7 @@ Shadow yang terakhir adalah efek ilusi kertas yang melengkung ke atas. triknya s
     -moz-box-shadow:0 5px 10px rgba(0,0,0,.5);
     box-shadow:0 5px 10px rgba(0,0,0,.5);
 }
+```
 
 ## Kesimpulan
 
