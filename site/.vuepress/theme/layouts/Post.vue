@@ -35,7 +35,6 @@
 import Toc from '@theme/components/Toc.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
 import { Comment } from '@vuepress/plugin-blog/lib/client/components'
-import LocomotiveScroll from 'locomotive-scroll';
 export default {
   
   components: {
@@ -44,15 +43,6 @@ export default {
     Comment,
     Newsletter: () => import('@theme/components/Newsletter.vue'),
   },
-  mounted() {
-    this.LMS = new LocomotiveScroll({
-      el: document.getElementById('js-scroll'),
-      smooth: false
-    });
-  },
-  destroyed() {
-    this.LMS.destroy();
-  }
 }
 </script>
 

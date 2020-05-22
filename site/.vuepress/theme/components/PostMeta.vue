@@ -20,7 +20,7 @@
     </span>
   </div>
   <div class="post-meta with-bio" v-else>
-    <Avatar :email="authorEmail" :size="avatarSize || 32" />
+    <Avatar :email="authorEmail || 'helloariona@gmail.com'" :size="avatarSize || 32" />
     <div class="post-meta-detail">
       <strong class="byline"
         v-if="author"

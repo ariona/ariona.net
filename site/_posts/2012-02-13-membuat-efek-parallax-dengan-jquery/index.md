@@ -35,7 +35,7 @@ Pembagian gambar untuk efek parallax
 
 Selanjutnya kita panggil gambar-gambar tersebut, tidak lupa kita tambahkan sebuah div dengan nama frame untuk menampung semua objek tersebut.
 
-```
+```html
 <div id="frame">
     <img src="background.jpg">
     <img src="gunung.png" id="gunung">
@@ -49,7 +49,7 @@ Selanjutnya kita panggil gambar-gambar tersebut, tidak lupa kita tambahkan sebua
 Yang perlu ditambahkan pada tag img adalah, atribut data-xrange dan data-yrange, nilai dari atribut ini akan digunakan oleh plugin plax untuk menentukan kecepatan dari objek tersebut ketika mouse digerakkan.  
 data-xrange akan menetukan kecepatan objek secara horizontal dan data-yrange secara Vertical ketika mouse digeser-geser. Jadi kode HTML akhir menjadi berikut :
 
-```
+```html
 <div id="frame">
     <img src="background.jpg">
     <img src="gunung.png" id="gunung" data-xrange="10" data-yrange="10">
@@ -66,7 +66,7 @@ Untuk objek yang berjarak jauh, kita beri nilai kecil, agar pergerakannya menjad
 
 Pertama-tama kita siapkan style untuk frame :
 
-```
+```css
 #frame{
     width:800px;
     height:400px;
@@ -78,7 +78,7 @@ Pertama-tama kita siapkan style untuk frame :
 
 Selanjutnya, kita ubah position dari seluruh tag img menjadi absolute :
 
-```
+```css
 #frame img{
     position:absolute;
 }  
@@ -86,7 +86,7 @@ Selanjutnya, kita ubah position dari seluruh tag img menjadi absolute :
 
 Terakhir, kita tinggal mengatur posisi dari objek-objek yang ada dengan properti top dan left, sehingga objek-objek yang ada tersusun sesuai gambar utuh sebelumnya.
 
-```
+```css
 #gunung{
     top:20px;
     left:-100px;
@@ -111,7 +111,7 @@ Terakhir, kita tinggal mengatur posisi dari objek-objek yang ada dengan properti
 
 ## Efek Parallax dengan Javascript
 
-```
+```html
 <script src="jquery.js"></script>
 <script src="plax.js"></script>
 ```
@@ -120,7 +120,7 @@ Sentuhan terakhir adalah pada jquery dan plax. Load library javascript dan plax 
 
 lalu tambahkan Script berikut :
 
-```
+```js
 $(document).ready(function () {
     $('#frame img').plaxify()
     $.plax.enable()

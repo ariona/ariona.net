@@ -24,7 +24,28 @@ Jika anda belum tahu apa yang dimaksud dengan overlay disini, klik tombol beriku
 
 Teknik Overlay sederhana, jangan berharap lebih :-). Klik tombol close di kanan atas
 
-.overlay{width:100%;height:100%;position:fixed;background:rgba(0,0,0,.7);z-index:9999;top:0;left:0;display:none;}.box-overlay{width:400px;height:150px;background:white;border-radius:10px;margin:20% auto;position:relative;padding:10px;box-shadow:0 0 0 5px rgba(0,0,0,.4);text-align: center;}.close-button{width: 20px;height: 20px;background: black;border-radius: 50%;border: 3px solid white;box-shadow: 0 0 5px rgba(0, 0, 0, .7);display: block;color: white;text-align: center;text-decoration:none;position:absolute;top:-10px;right:-10px;}jQuery(document).ready(function(){jQuery(".close-button").click(function(e){e.preventDefault();jQuery(".overlay").fadeOut();});jQuery(".demo-overlay").click(function(e){e.preventDefault();jQuery(".overlay").fadeIn();})});
+::: demo [vanilla]
+```html
+<html>
+<div class="post-image">
+  <a href="#" class="button green demo-overlay">Tampilkan Overlay!</a>
+  <div class="overlay">
+    <div class="box-overlay">
+      <a href="#" class="close-button">x</a>
+      <h2>Teknik Dasar Membuat Overlay</h2>
+      <p>Teknik Overlay sederhana, jangan berharap lebih :-). Klik tombol close di kanan atas</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</html>
+<script>
+jQuery(document).ready(function(){jQuery(".close-button").click(function(e){e.preventDefault();jQuery(".overlay").fadeOut();});jQuery(".demo-overlay").click(function(e){e.preventDefault();jQuery(".overlay").fadeIn();})});
+</script>
+<style>
+.overlay{width:100%;height:100%;position:fixed;background:rgba(0,0,0,.7);z-index:9999;top:0;left:0;display:none;}.box-overlay{width:400px;height:150px;background:white;border-radius:10px;margin:20% auto;position:relative;padding:10px;box-shadow:0 0 0 5px rgba(0,0,0,.4);text-align: center;}.close-button{width: 20px;height: 20px;background: black;border-radius: 50%;border: 3px solid white;box-shadow: 0 0 5px rgba(0, 0, 0, .7);display: block;color: white;text-align: center;text-decoration:none;position:absolute;top:-10px;right:-10px;}
+</style>
+` ` `
+:::
 
 Teknik pembuatannya sangat sederhana, kita hanya membuat sebuah div, lalu mengatur lebar dan tinggi menjadi 100% dan membuatnya menjadi elemen teratas. Masih belum mengerti? mari kita telaah bersama
 
@@ -32,18 +53,15 @@ Teknik pembuatannya sangat sederhana, kita hanya membuat sebuah div, lalu mengat
 
 Buatlah sebuah div untuk overlay, dan tempatkan pula konten yang ingin anda tampilkan dalam overlay seperti berikut:
 
-    
-
-        [x](#)
-
-        
-
-# Teknik Dasar Membuat Overlay
-
-        Teknik Overlay sederhana, jangan berharap lebih :-). Klik tombol close di kanan atas
-    
-
+```html
+<div class="overlay">
+  <div class="box-overlay">
+    <a href="#" class="close-button">x</a>
+    <h1>Teknik Dasar Membuat Overlay</h1>
+    <p>Teknik Overlay sederhana, jangan berharap lebih :-). Klik tombol close di kanan atas</p>
+  </div>
 </div>
+```
 
 Satu div dengan class overlay, div ini berfungsi sebagai penutup seluruh konten dan sebuah div dengan class box-overlay yang akan menjadi konten yang ditampilkan ketika overlay aktif.
 
@@ -51,6 +69,7 @@ Satu div dengan class overlay, div ini berfungsi sebagai penutup seluruh konten 
 
 Pertama, seperti yang telah saya sebutkan di atas, kita akan merubah div overlay agar menutupi seluruh konten utama situs.
 
+```css
 .overlay{
     width:100%;
     height:100%;
@@ -60,11 +79,13 @@ Pertama, seperti yang telah saya sebutkan di atas, kita akan merubah div overlay
     top:0;
     left:0;
 }
+```
 
 `width:100%;height:100%` pasti sudah tahu kan fungsinya. `position:fixed` membuat overlay tetap berada pada posisinya meskipun kita melakukan scrolling. `background:rgba(0,0,0,.7);` kita tambahkan background dengan teknik rgba agar kita memiliki nilai transparansi (alpha) sebesar 70%. dan terakhir adalah `z-index:9999` yang berfungsi menempatkan overlay ini di atas seluruh elemen yang ada, saya gunakan nilai 9999 karena sebagian plugin javascript (jquery) terkadang memiliki nilai sebesar itu.
 
 Tugas Selanjutnya adalah memosisikan overlay-box supaya berada di tengah.
 
+```css
 .box-overlay{
     width:400px;
     height:150px;
@@ -76,15 +97,13 @@ Tugas Selanjutnya adalah memosisikan overlay-box supaya berada di tengah.
     box-shadow:0 0 0 5px rgba(0,0,0,.4);
     text-align: center;
 }
-
-[//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js](//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js)
-
-(adsbygoogle = window.adsbygoogle || \[\]).push({});
+```
 
 Tak ada yang aneh bukan dengan style di atas? hanyalah style-style dasar yang digunakan. `position:relative;` saya tambahkan karena tombol close akan memiliki `position:absolute`.
 
 Terakhir kita beri style untuk tombol closenya.
 
+```
 .close-button{
     width: 20px;
     height: 20px;
@@ -100,6 +119,7 @@ Terakhir kita beri style untuk tombol closenya.
     top:-10px;
     right:-10px;
 }
+```
 
 Dari style di atas, anda juga dapat memahami penggunaan position relative dan absolute, dalam kasus ini saya terapkan untuk menempatkan posisi tombol close berada di kanan atas dan sedikit keluar dari box overlay. Pemberian `border-radius:50%` membuat link menjadi bulat. Agar kita dapat mengatur width dan height dari link maka saya tambahkan pula `display:block`.
 
@@ -113,12 +133,14 @@ Saya akan menggunakan library jQuery, jadi pastikan anda telah mendownload dan m
 
 Selanjutnya sederhana saja, ketika tombol close diklik, kita akan menyembunyikan overlaynya.
 
-    $(document).ready(function(){
-        $(".close-button").click(function(e){
-            e.preventDefault();
-            $(".overlay").fadeOut();
-        });
-    });
+```js
+$(document).ready(function(){
+  $(".close-button").click(function(e){
+    e.preventDefault();
+    $(".overlay").fadeOut();
+  });
+});
+```
 
 Masih bingung dengan maksud dari kode di atas, mari saya jelaskan sedikit :
 

@@ -76,7 +76,7 @@ Namun kini, telah hadir JSON sebagai format baru untuk pertukaran data web. JSON
 
 Dan berikut ini adalah contoh penggunaan JSON dalam HTML menggunakan javascript:
 
-```
+```html
 <!DOCTYPE HTML>
 <html>
 <head>

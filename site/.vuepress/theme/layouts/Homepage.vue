@@ -92,38 +92,6 @@ export default {
     }
   },
 
-
-  methods: {
-    onMouseMove( event ){
-      this.mouseX = event.pageX;
-      this.mouseY = event.pageY;
-    },
-    followCursor( element, speed ) {
-
-      const cursor = document.querySelector( element );
-
-      let elementX = 0;
-      let elementY = 0;
-
-      let cSpeed = speed || 0.5;
-
-      const animate = () => {
-        let distanceX = this.mouseX - elementX
-        let distanceY = this.mouseY - elementY
-
-        // Let slowdown the speed
-        elementX = elementX + ( distanceX * cSpeed );
-        elementY = elementY + ( distanceY * cSpeed );
-
-        cursor.style.left = elementX + 'px';
-        cursor.style.top  = elementY + 'px';
-
-        requestAnimationFrame( animate );
-      }
-      animate();
-    }
-  }
-
 }
 </script>
 
