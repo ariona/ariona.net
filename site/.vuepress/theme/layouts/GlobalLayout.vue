@@ -4,6 +4,7 @@
     <transition name="fade">
       <GlobalLayout />
     </transition>
+    <Footer />
   </div>
 </template>
 
@@ -45,12 +46,6 @@ export default {
       }
     }
   }
-
-  // mounted() {
-  //   this.$router.afterEach(() => {
-  //     this.isMobileHeaderOpen = false
-  //   })
-  // },
 }
 </script>
 
@@ -98,5 +93,11 @@ export default {
 }
 .items-center{
   align-items: center;
+}
+.container {
+  max-width: 990px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
 }
 </style>

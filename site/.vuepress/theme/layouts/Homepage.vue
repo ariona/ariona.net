@@ -42,8 +42,6 @@
       </div>
     </div>
 
-    <Footer />
-
   </div>
 </template>
 
@@ -125,41 +123,7 @@ export default {
   background-color: white;
   // overflow-x: hidden;
 }
-.site-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 69;
-}
-.site-brand h1{
-  margin : 0;
-  font-weight: 900;
-}
-.site-brand small {
-  font-size: 1em
-}
-.site-navigation {
-  font-weight: 700;
-  a {
-    color: #333;
-    text-decoration: none;
-    padding: 10px 15px;
-    &:last-child { padding-right: 0; }
 
-    &:hover{
-      // color: var(--accentColor);
-    }
-  }
-}
-.container {
-  max-width: 990px;
-  margin: 0 auto;
-}
 .homepage-hero {
   min-height: 100vh;
   display: flex;
@@ -177,6 +141,10 @@ export default {
     border-bottom: none;
     padding-bottom: 0;
     user-select: none;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2em
+    }
   }
 }
 .hello-bg{

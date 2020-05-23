@@ -3,15 +3,15 @@
 
     <div class="hero" data-scroll-section v-if="$pagination._currentPage.path == '/blog/'">
       <div class="hero-container">
-        <div class="hero-detail">
-          <span>Download Ebook Gratis</span>
-          <h2>Belajar HTML & CSS<br/><small>"Tutorial Fundamental dalam Mempelajari HTML & CSS"</small></h2>
-          <a href="#">Baca Selengkapnya </a>
-        </div>
         <div class="hero-image">
           <div class="image-wrapper" style="padding-bottom:115.6%">
             <img src="../../../assets/images/cover-pat.png">
           </div>
+        </div>
+        <div class="hero-detail">
+          <span>Download Ebook Gratis</span>
+          <h2>Belajar HTML & CSS<br/><small>"Tutorial Fundamental dalam Mempelajari HTML & CSS"</small></h2>
+          <a href="#">Baca Selengkapnya </a>
         </div>
       </div>
     </div>
@@ -21,7 +21,6 @@
       
       <div class="post-list-header">
         <h2 class="section-title">Blog & Tutorial</h2>
-        <SearchBox />
       </div>
 
       <article
@@ -79,7 +78,6 @@ import 'dayjs/locale/id'
 import Vue from 'vue'
 import dayjs from 'dayjs'
 import PostMeta from '@theme/components/PostMeta.vue'
-import SearchBox from '@SearchBox'
 import { NavigationIcon, ClockIcon, TagIcon } from 'vue-feather-icons'
 import {
   Pagination,
@@ -89,7 +87,7 @@ import {
 dayjs.locale('id')
 
 export default {
-  components: { SearchBox, PostMeta, NavigationIcon, ClockIcon, TagIcon },
+  components: { PostMeta, NavigationIcon, ClockIcon, TagIcon },
 
   data() {
     return {
@@ -143,15 +141,15 @@ export default {
 </script>
 
 <style lang="scss">
-body:not(.scrolled) .blog-index .site-header,
-body:not(.scrolled) .blog-index .site-header .site-brand h1,
-body:not(.scrolled) .blog-index .site-header a{
-  color: white;
+body:not(.scrolled) .blog-index .site-header{
+  --contentColor: white;
 }
 
 .post-list {
   max-width: var(--contentMaxWidth);
   margin: 60px auto 0;
+  padding-left: 15px;
+  padding-right: 15px;
 
   .page-blog & {
     padding-top: 80px;
@@ -162,6 +160,10 @@ body:not(.scrolled) .blog-index .site-header a{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -176,11 +178,23 @@ body:not(.scrolled) .blog-index .site-header a{
     margin: 0 auto;
     display: flex;
     align-items: center;
-    padding: 40px 0;
+    padding: 40px 15px;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      text-align: center;
+      padding-bottom: 60px;
+    }
   }
 
   .hero-image {
     width: 500px;
+    max-width: 100%;
+    order: 1;
+
+    @media screen and (max-width: 768px) {
+      order: 0;
+    }
   }
 
   .hero-detail{

@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <vue-picture-swipe class="gallery ${'frame-' + frame}" :items="pictures"></vue-picture-swipe>
+    <vue-picture-swipe :class="`gallery ${'frame-' + frame}`" :items="pictures"></vue-picture-swipe>
   </client-only>
 </template>
 
@@ -33,12 +33,19 @@ export default {
 .my-gallery{
   display: flex;
   flex-wrap: wrap;
-  margin: 60px 10px;
+  margin: 60px -10px;
 
   figure {
     width: 20%;
     margin: 0;
     padding: 10px;
+
+    @media screen and (max-width: 768px) {
+      width: 33.3333%;
+    }
+    @media screen and (max-width: 640px) {
+      width: 50%;
+    }
 
     img {
       width: 100%;

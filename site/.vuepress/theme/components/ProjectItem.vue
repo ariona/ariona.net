@@ -42,6 +42,11 @@ export default {
   background: white;
   box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 5px 20px rgba(0,0,0,.05);
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+  }
   /*
   transform: translate3d(0,30px,0);
   opacity: 0;
@@ -63,17 +68,26 @@ export default {
     display: flex;
     flex-direction: column;
     flex: 1;
+
+    @media screen and (max-width: 768px) {
+      padding: 30px;
+    }
   }
 
   &-title{
     font-weight: 900;
-    font-size: 48px;
+    font-size: 3em;
     margin: 0 0 20px;
     // color: inherit;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2em
+    }
   }
 
   &-desc {
     flex: 1;
+    padding-bottom: 30px;
 
     p:first-child{ margin-top: 0; }
     p:last-child{ margin-bottom: 0; }
@@ -98,6 +112,14 @@ export default {
       display: block;
     }
 
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      img {
+        max-width: 100%;
+        margin-left: 0!important;
+      }
+    }
+
     .image-scroller {
       padding-bottom: 80%;
 
@@ -105,6 +127,10 @@ export default {
         background-image: url("../../../images/themezy.jpg");
         animation: scroller 100s linear infinite alternate;
         background-size: cover;
+
+        @media screen and (max-width: 768px) {
+          animation: none;
+        }
       }
     }
   }

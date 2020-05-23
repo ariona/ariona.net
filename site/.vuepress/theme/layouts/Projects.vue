@@ -17,6 +17,7 @@ export default {
 <style lang="scss">
 .project-list{
   max-width: 990px;
+  padding: 0 15px;
   margin: 160px auto 0;
 }
 </style>

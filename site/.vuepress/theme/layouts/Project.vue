@@ -43,7 +43,6 @@
         </div>
       </div>
     </article>
-    <Footer/>
   </div>
 </template>
 
@@ -61,7 +60,7 @@ export default {
 <style lang="scss">
 .project-single {
   header{
-    padding: 160px 0 0;
+    padding: 160px 15px 0;
     margin-bottom: 60px;
     position: relative;
     z-index: 1;
@@ -81,6 +80,10 @@ export default {
 
     &.scroller {
       animation: scrollerRight 50s linear alternate;
+
+      @media screen and (max-width: 768px) {
+        animation: none;
+      }
     }
   }
 
@@ -138,6 +141,8 @@ export default {
   }
 
   .content-wrap {
+    padding-left: 15px;
+    padding-right: 15px;
     p {
       max-width: 768px;
       margin-left: auto;

@@ -16,8 +16,16 @@
         :class="item.style"
         :link="item.link">{{ item.text }}</NavLink>
     </nav>
+    <SearchBox/>
   </div>
 </template>
+
+<script>
+import SearchBox from '@SearchBox'
+export default {
+  components: { SearchBox }
+}
+</script>
 
 <style lang="scss">
 .site-header {
@@ -30,25 +38,32 @@
   justify-content: space-between;
   align-items: center;
   z-index: 69;
-  // mix-blend-mode: difference;
   transition: background .3s ease, padding .3s ease, backdrop-filter .3s ease;
 
   .scrolled &{
     background: rgba(255,255,255,.9);
     padding: 10px 30px;
     color: #333;
-    // backdrop-filter: blur(2px);
     box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.06);
 
     --contentColor: #000!important;
 
     // h1, a{ color: inherit; }
-    .site-brand h1{ font-size: 1.5em }
-    .site-brand small{ font-size: .8em }
+    .site-brand { font-size: 12px }
+    .site-logo {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 15px!important;
   }
 }
 .site-brand {
   display: flex;
+  align-items: center;
+  transition: .3s ease;
 }
 .site-logo {
   width: 60px;
@@ -57,6 +72,7 @@
   background-color: white;
   border-radius: 50%;
   padding: 1px;
+  transition: .3s ease;
 }
 .site-brand h1{
   margin : 0;
@@ -72,6 +88,11 @@
 }
 .site-navigation {
   font-weight: 700;
+
+  @media screen and (max-width: 990px){
+    display: none;
+  }
+
   a {
     color: #333;
     color: var(--contentColor, #000);
@@ -85,6 +106,32 @@
 
     &.router-link-exact-active.router-link-active{
       border-bottom: 2px solid
+    }
+  }
+}
+.search-box {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  input {
+    border-color: #999;
+    border-radius: 4px;
+  }
+  .suggestions {
+    right: 0;
+    color: #000;
+    width: 400px;
+    max-width: 320px;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .header{
+      display: none;
+    }
+
+    li:not(:last-child) {
+      border-bottom: 1px solid #e3e3e3;
     }
   }
 }

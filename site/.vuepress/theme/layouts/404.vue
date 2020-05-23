@@ -9,8 +9,6 @@
         Take me home.
       </RouterLink>
     </div>
-
-    <Footer />
   </div>
 </template>
 

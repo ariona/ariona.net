@@ -57,7 +57,6 @@
 
       <div class="message" v-if="message">{{message}}</div>
     </form>
-
   </div>
 </template>
 
@@ -198,21 +197,33 @@ export default {
   display: flex;
   max-width: 990px;
   margin: 0 auto;
-  padding-top: 160px; 
+  padding: 160px 15px 0;
+
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+  }
 
   .left {
     width: 40%;
+
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
   }
 
   .contact{
     list-style: none;
     // display: flex;
-    align-items: center;
     padding-left: 0;
     margin: 30px 0;
     
     li {
       margin-bottom: 15px;
+
+      @media screen and (max-width: 768px){
+        display: inline-block;
+        margin: 15px;
+      }
     }
 
     a {
@@ -237,6 +248,12 @@ export default {
     background: white;
     box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 5px 20px rgba(0,0,0,.05);
     padding: 40px;
+
+    @media screen and (max-width: 768px){
+      padding: 30px;
+      border-top: 10px solid var(--accentColor);
+      border-radius: 0
+    }
 
     .field {
       margin-bottom: 30px;
