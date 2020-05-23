@@ -93,4 +93,10 @@ export default {
 .spacer {
   height: 100px;
 }
+.flex {
+  display: flex;
+}
+.items-center{
+  align-items: center;
+}
 </style>

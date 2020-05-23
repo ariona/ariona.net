@@ -78,7 +78,7 @@ Sayangnya spriteright hanya tersedia untuk Mac, sedangkan untuk windows anda bis
 Ghostlab adalah tool yang sangat membantu pengujian web responsif. Ghostlab akan membuat sebuah web server dan anda bisa membukanya dalam berbagai device yang terhubung dalam satu wifi.
 
 <div class="codepen-iframe">
-  <iframe src="http://www.youtube.com/embed?v=QfLKXTv4d8Q" frameborder="0"></iframe>
+  <iframe src="https://www.youtube.com/embed?v=QfLKXTv4d8Q" frameborder="0"></iframe>
 </div>
 
 Uniknya seluruh aktifitas yang kita lakukan pada web, akan secara otomatis tersynchonise di deveice-device yang terhubung. Misalnya ketika anda melakukan scroll, maka device lain pun akan ikut scroll, ketika anda mengklik button/link maka device lain pun akan mengikutinya.

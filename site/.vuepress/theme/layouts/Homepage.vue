@@ -33,7 +33,7 @@
             <div class="project-desc">
               <p>It's an <strong>Utility Style Framework</strong> for rapidly building React Native's User Interface. You now can style your React Native App with utility class just like tailwind.css</p>
             </div>
-            <div class="project-link">Learn more</div>
+            <a class="project-link" target="_blank" href="https://ariona.github.io/rn-utility-style/">Learn more</a>
           </div>
           <figure class="project-image">
             <img src="../../../images/rn-utility-style.png" alt="">
@@ -41,6 +41,8 @@
         </div>
       </div>
     </div>
+
+    <Footer />
 
   </div>
 </template>
@@ -63,29 +65,29 @@ export default {
             title: 'Tanzil',
             date: '2018-08-78',
             summary: 'Tanzil is an Al-Qur\'an for Android built with React Native Framework. It has beautiful and functional User interface and shipped with features that will help user read and memorise Al-Quran easily.',
-            path: '/project/tanzil',
-            cover: '/images/tanzil.png'
-          }
+            cover: '/assets/img/projects/tanzil.png'
+          },
+          path: '/project/tanzil',
         },
         {
           frontmatter: {
             title: 'UKM Digital',
             date: '2020-08-78',
             summary: 'UKM Digital is a website builder platform for small to medium size business. With it\'s block based editor it\'s never been easy to create a website. Just select block design, edit the content and publish it.',
-            path: '/project/ukm',
-            cover: '/images/ukm.png',
+            cover: '/assets/img/projects/ukm.png',
             style: "margin-left: -40px"
-          }
+          },
+          path: '/project/ukm',
         },
         {
           frontmatter: {
             title: 'Themezy',
             date: '2015-08-78',
             summary: 'Themezy is a HTML & CSS Website Templates provider that be downloaded for free',
-            path: '/project/themezy',
-            cover: '/images/themezy.jpg',
+            cover: '/assets/img/projects/themezy.jpg',
             scroller: true
-          }
+          },
+          path: '/project/themezy',
         },
 
       ]

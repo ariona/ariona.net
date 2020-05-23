@@ -3,6 +3,19 @@
     <div class="left">
       <div class="section-subtitle">Contact</div>
       <h2 class="section-title">Get in touch — let’s work together.</h2>
+
+      <ul v-if="contact" class="contact">
+        <li
+          v-for="item in contact"
+          :key="item.iconComponent"
+          class="contact-item"
+        >
+          <NavLink :link="item.link">
+            <component :is="item.iconComponent"></component>
+            <span>{{ item.text }}</span>
+          </NavLink>
+        </li>
+      </ul>
     </div>
     <form
       class="form"
@@ -35,7 +48,7 @@
       </div>
       <div class="field">
         <label>Message</label>
-        <textarea name="email" v-model="form.message" rows="5" placeholder="What's your message?"></textarea>
+        <textarea name="message" v-model="form.message" rows="5" placeholder="What's your message?"></textarea>
       </div>
 
       <div class="field text-right">
@@ -50,7 +63,43 @@
 
 <script>
 import axios from 'axios'
+import {
+  CodepenIcon,
+  CodesandboxIcon,
+  FacebookIcon,
+  GithubIcon,
+  GitlabIcon,
+  GlobeIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  MailIcon,
+  MessageSquareIcon,
+  MusicIcon,
+  PhoneIcon,
+  TwitterIcon,
+  VideoIcon,
+  YoutubeIcon,
+  ArrowUpIcon
+} from 'vue-feather-icons'
 export default {
+  components: {
+    CodepenIcon,
+    CodesandboxIcon,
+    FacebookIcon,
+    GithubIcon,
+    GitlabIcon,
+    GlobeIcon,
+    InstagramIcon,
+    LinkedinIcon,
+    MailIcon,
+    MessageSquareIcon,
+    MusicIcon,
+    PhoneIcon,
+    TwitterIcon,
+    VideoIcon,
+    YoutubeIcon,
+    ArrowUpIcon
+  },
   data() {
     return {
       form : {
@@ -62,10 +111,58 @@ export default {
       message: ""
     }
   },
+  computed: {
+    contact() {
+      return (
+        (this.$themeConfig.footer && this.$themeConfig.footer.contact) ||
+        []
+      )
+        .map(({ type, link, text }) => {
+          return {
+            iconComponent: this.getIconComponentName(type),
+            link,
+            text
+          }
+        })
+        .filter(({ iconComponent }) => iconComponent)
+    },
+  },
   methods: {
-    composeEmail() {
-      const subject = `${this.name} – ${this.service}`
-      window.open(`mailto:helloariona@gmail.com?subject=${subject}&body=${this.message}`)
+    getIconComponentName(contactType) {
+      switch (contactType) {
+        case 'codepen':
+          return 'CodepenIcon'
+        case 'codesandbox':
+          return 'CodesandboxIcon'
+        case 'facebook':
+          return 'FacebookIcon'
+        case 'github':
+          return 'GithubIcon'
+        case 'gitlab':
+          return 'GitlabIcon'
+        case 'instagram':
+          return 'InstagramIcon'
+        case 'linkedin':
+          return 'LinkedinIcon'
+        case 'mail':
+          return 'MailIcon'
+        case 'messenger':
+          return 'MessageSquareIcon'
+        case 'music':
+          return 'MusicIcon'
+        case 'phone':
+          return 'PhoneIcon'
+        case 'twitter':
+          return 'TwitterIcon'
+        case 'video':
+          return 'VideoIcon'
+        case 'web':
+          return 'GlobeIcon'
+        case 'youtube':
+          return 'YoutubeIcon'
+        default:
+          return ''
+      }
     },
     encode (data) {
       return Object.keys(data)
@@ -78,7 +175,7 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
-      axios.post("/contact.html",
+      axios.post("/contact/",
         this.encode({
           "form-name": "contact",
           ...this.form
@@ -98,19 +195,48 @@ export default {
 
 <style lang="scss">
 .contact-page{
-  // display: flex;
+  display: flex;
   max-width: 990px;
   margin: 0 auto;
-  padding-top: 160px;
+  padding-top: 160px; 
+
+  .left {
+    width: 40%;
+  }
+
+  .contact{
+    list-style: none;
+    // display: flex;
+    align-items: center;
+    padding-left: 0;
+    margin: 30px 0;
+    
+    li {
+      margin-bottom: 15px;
+    }
+
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    svg {
+      color: var(--accentColor);
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
 
   .form {
+    flex: 1;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
     background: white;
     box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 5px 20px rgba(0,0,0,.05);
     padding: 40px;
-    margin: 60px 0;
 
     .field {
       margin-bottom: 30px;

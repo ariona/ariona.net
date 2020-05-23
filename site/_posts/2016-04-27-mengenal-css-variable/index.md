@@ -219,7 +219,7 @@ Sekarang coba buka study kasus tersebut di browser anda, atau anda bisa membuka 
 CSS Variable / Custom Property Demo
 
 <div class="codepen-iframe">
-    <iframe src="http://codepen.io/ariona/embed/WwgdQr" frameborder="0"></iframe>
+    <iframe src="https://codepen.io/ariona/embed/WwgdQr" frameborder="0"></iframe>
 </div>
 
 [Demo Codepen](http://codepen.io/ariona/pen/WwgdQr)

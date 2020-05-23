@@ -1,6 +1,8 @@
 module.exports = {
   title: 'ariona.net', // Title for the site. This will be displayed in the navbar.
-  // theme: '@vuepress/theme-blog',
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }]
+  ],
   themeConfig: {
     summaryLength: 300,
     paginationComponent: 'SimplePagination',
@@ -26,16 +28,23 @@ module.exports = {
     ],
     smoothScroll: true,
     footer: {
-      copyright: '2020 &copy; Rian Ariona',
+      copyright: 'Coded with <span style="color:red">❤️</span> by Rian Ariona, Powered by <a href="https://vuepress.vuejs.org/">VuePress</a>',
       contact: [
         {
           type: 'github',
           link: 'https://github.com/vuejs/vuepress',
+          text: 'GitHub'
         },
         {
-          type: 'twitter',
-          link: 'https://github.com/vuejs/vuepress',
+          type: 'codepen',
+          link: 'https://codepen.io/ariona',
+          text: 'Codepen'
         },
+        {
+          type: 'linkedin',
+          link: 'https://www.linkedin.com/in/ariona/',
+          text: 'LinkedIn'
+        }
       ]
     }
   },
@@ -109,7 +118,7 @@ module.exports = {
     [
       'vuepress-plugin-medium-zoom',
       {
-        selector: '.content-wrap img',
+        selector: '.content-wrap p img',
         delay: 1000,
         options: {
           margin: 24,

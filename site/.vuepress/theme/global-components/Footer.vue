@@ -1,80 +1,24 @@
 <template>
   <footer class="footer">
-    <div class="footer-left-wrap">
-      <ul v-if="contact" class="contact">
-        <li
-          v-for="item in contact"
-          :key="item.iconComponent"
-          class="contact-item"
-        >
-          <NavLink :link="item.link">
-            <component :is="item.iconComponent"></component>
-            {{ item.text }}
-          </NavLink>
-        </li>
-      </ul>
-    </div>
-
-    <div class="footer-right-wrap">
-      <div v-if="copyright" class="copyright">
-        {{copyright}}
-      </div>
-    </div>
+    <a href="/contact.html" class="fab contact-button"><mail-icon size="1.5x" class="custom-class"></mail-icon></a>
+    <div @click="backToTop" class="fab back-2-top"><arrow-up-icon size="1.5x" class="custom-class"></arrow-up-icon></div>
+    <div v-if="copyright" class="copyright" v-html="copyright"></div>
   </footer>
 </template>
 
 <script>
 import {
-  CodepenIcon,
-  CodesandboxIcon,
-  FacebookIcon,
-  GithubIcon,
-  GitlabIcon,
-  GlobeIcon,
-  InstagramIcon,
-  LinkedinIcon,
   MailIcon,
-  MessageSquareIcon,
-  MusicIcon,
-  PhoneIcon,
-  TwitterIcon,
-  VideoIcon,
-  YoutubeIcon,
+  ArrowUpIcon
 } from 'vue-feather-icons'
 
 export default {
   components: {
-    CodepenIcon,
-    CodesandboxIcon,
-    FacebookIcon,
-    GithubIcon,
-    GitlabIcon,
-    GlobeIcon,
-    InstagramIcon,
-    LinkedinIcon,
     MailIcon,
-    MessageSquareIcon,
-    MusicIcon,
-    PhoneIcon,
-    TwitterIcon,
-    VideoIcon,
-    YoutubeIcon,
+    ArrowUpIcon
   },
 
   computed: {
-    contact() {
-      return (
-        (this.$themeConfig.footer && this.$themeConfig.footer.contact) ||
-        []
-      )
-        .map(({ type, link }) => {
-          return {
-            iconComponent: this.getIconComponentName(type),
-            link,
-          }
-        })
-        .filter(({ iconComponent }) => iconComponent)
-    },
 
     copyright() {
       return (
@@ -84,45 +28,32 @@ export default {
   },
 
   methods: {
-    getIconComponentName(contactType) {
-      switch (contactType) {
-        case 'codepen':
-          return 'CodepenIcon'
-        case 'codesandbox':
-          return 'CodesandboxIcon'
-        case 'facebook':
-          return 'FacebookIcon'
-        case 'github':
-          return 'GithubIcon'
-        case 'gitlab':
-          return 'GitlabIcon'
-        case 'instagram':
-          return 'InstagramIcon'
-        case 'linkedin':
-          return 'LinkedinIcon'
-        case 'mail':
-          return 'MailIcon'
-        case 'messenger':
-          return 'MessageSquareIcon'
-        case 'music':
-          return 'MusicIcon'
-        case 'phone':
-          return 'PhoneIcon'
-        case 'twitter':
-          return 'TwitterIcon'
-        case 'video':
-          return 'VideoIcon'
-        case 'web':
-          return 'GlobeIcon'
-        case 'youtube':
-          return 'YoutubeIcon'
-        default:
-          return ''
-      }
-    },
+    backToTop() {
+
+    }
   },
 }
 </script>
 
 <style lang="scss">
+.footer{
+  padding: 60px 30px;
+  text-align: center;
+
+  .fab {
+    position: fixed;
+    bottom: 30px;
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow:  0 1px 1px rgba(0,0,0,.1), 0 2px 4px rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.contact-button{ left: 30px; }
+    &.back-2-top{ right: 30px; }
+  }
+}
 </style>
