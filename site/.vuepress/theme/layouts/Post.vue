@@ -20,6 +20,16 @@
         <div class="content-wrap">
           <Toc />
           <Content itemprop="articleBody" />
+          
+          <div class="github-edit">
+            <NavLink class="edit-on-github" :link="createEditLink ('https://github.com/ariona/ariona.net', 'https://github.com/ariona/ariona.net', 'site', 'master', '/'+$page.relativePath)">Edit artikel ini di GitHub</NavLink>
+            
+            <div class="last-updated" v-if="lastUpdated">
+              <span class="prefix">{{ lastUpdatedText }}: </span>
+              <span class="time">{{ lastUpdated }}</span>
+            </div>
+          </div>
+          
         </div>
         <footer class="post-footer">
           <Newsletter v-if="$service.email.enabled" />
@@ -35,6 +45,11 @@
 import Toc from '@theme/components/Toc.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
 import { Comment } from '@vuepress/plugin-blog/lib/client/components'
+import { outboundRE, endingSlashRE } from '@theme/components/util'
+import 'dayjs/locale/id'
+import dayjs from 'dayjs'
+dayjs.locale('id')
+
 export default {
   
   components: {
@@ -43,6 +58,50 @@ export default {
     Comment,
     Newsletter: () => import('@theme/components/Newsletter.vue'),
   },
+
+  computed: {
+    lastUpdated () {
+      if (this.$page.lastUpdated) {
+        return dayjs(this.$page.lastUpdated).format('DD MMM YYYY')
+      }
+    },
+    lastUpdatedText () {
+      if (typeof this.$themeLocaleConfig.lastUpdated === 'string') {
+        return this.$themeLocaleConfig.lastUpdated
+      }
+      if (typeof this.$site.themeConfig.lastUpdated === 'string') {
+        return this.$site.themeConfig.lastUpdated
+      }
+      return 'Terakhir diperbarui'
+    },
+  },
+
+  methods: {
+    createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
+      const bitbucket = /bitbucket.org/
+      if (bitbucket.test(repo)) {
+        const base = outboundRE.test(docsRepo)
+          ? docsRepo
+          : repo
+        return (
+          base.replace(endingSlashRE, '') +
+           `/${docsBranch}` +
+           (docsDir ? '/' + docsDir.replace(endingSlashRE, '') : '') +
+           path +
+           `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
+        )
+      }
+      const base = outboundRE.test(docsRepo)
+        ? docsRepo
+        : `https://github.com/${docsRepo}`
+      return (
+        base.replace(endingSlashRE, '') +
+        `/edit/${docsBranch}` +
+        (docsDir ? '/' + docsDir.replace(endingSlashRE, '') : '') +
+        path
+      )
+    }
+  }
 }
 </script>
 
@@ -109,5 +168,21 @@ export default {
     margin: 30px -15px;
   }
 
+}
+
+.github-edit{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding: 15px;
+  background-color: #fbfbfb;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+}
+.edit-on-github {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
 }
 </style>

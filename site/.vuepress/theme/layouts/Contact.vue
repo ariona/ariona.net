@@ -21,25 +21,25 @@
       class="form"
       method="post"
       data-netlify="true"
-      data-netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true"
       name="contact"
       @submit.prevent="handleSubmit">
-
+      
       <input type="hidden" name="form-name" value="contact" />
 
       <div class="field">
         <label>Your name</label>
-        <input name="name" v-model="form.name" type="text" placeholder="What is your name">
+        <input name="name" v-model="form.name" type="text" placeholder="What is your name" required autocomplete="new-password">
       </div>
 
       <div class="field">
         <label>Your email</label>
-        <input name="email" v-model="form.email" type="text" placeholder="What is your email">
+        <input name="email_address" v-model="form.email" type="email" placeholder="What is your email" required autocomplete="new-password">
       </div>
 
       <div class="field">
         <label>Service</label>
-        <select name="service" v-model="form.service">
+        <select name="service" v-model="form.service" required>
           <option value="Just wanted to say hi">Just wanted to say hi</option>
           <option value="Need help with a Project">Need help with a Project</option>
           <option value="Long term partnership">Long term partnership</option>
@@ -48,7 +48,11 @@
       </div>
       <div class="field">
         <label>Message</label>
-        <textarea name="message" v-model="form.message" rows="5" placeholder="What's your message?"></textarea>
+        <textarea name="message" v-model="form.message" rows="5" placeholder="What's your message?" required autocomplete="new-password"></textarea>
+      </div>
+
+      <div class="field">
+        <div data-netlify-recaptcha="true"></div>
       </div>
 
       <div class="field text-right">
@@ -283,5 +287,11 @@ export default {
   }
   
 }
-
+.madu-manis {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: -9999px;
+  top: 0;
+}
 </style>

@@ -132,7 +132,7 @@ export default {
   }
 
   @media screen and (max-width: 990px) {
-    display: none;
+    display: none!important;
   }
   input {
     border-color: #999;
