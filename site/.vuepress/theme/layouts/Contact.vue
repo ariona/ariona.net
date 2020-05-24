@@ -174,13 +174,14 @@ export default {
         )
         .join("&");
     },
-    handleSubmit () {
+    handleSubmit (event) {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
       axios.post("/contact/",
         this.encode({
           "form-name": "contact",
+          "g-recaptcha-response": document.getElementById('g-recaptcha-response').value,
           ...this.form
         }),
         axiosConfig
