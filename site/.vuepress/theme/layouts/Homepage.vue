@@ -36,7 +36,7 @@
             <a class="project-link" target="_blank" href="https://ariona.github.io/rn-utility-style/">Learn more</a>
           </div>
           <figure class="project-image">
-            <img src="../../../images/rn-utility-style.png" alt="">
+            <img src="/assets/img/projects/rn-utility-style.png" alt="">
           </figure>
         </div>
       </div>

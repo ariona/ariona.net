@@ -124,7 +124,7 @@ export default {
       padding-bottom: 80%;
 
       &.themezy{
-        background-image: url("../../../images/themezy.jpg");
+        background-image: url("/assets/img/projects/themezy.jpg");
         animation: scroller 100s linear infinite alternate;
         background-size: cover;
 
