@@ -1,5 +1,5 @@
 <template>
-  <div class="post-single-page" id="js-scroll">
+  <div class="post-single-page">
     <article
       class="post-single"
       itemscope
@@ -103,5 +103,11 @@ export default {
 
 .post-footer {
   margin-top: 120px;
+}
+@media screen and (max-width: 419px){
+  .content__default div[class*="language-"] {
+    margin: 30px -15px;
+  }
+
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="project-single-page" id="js-scroll">
+  <div class="project-single-page">
     <article
       class="project-single"
       itemscope

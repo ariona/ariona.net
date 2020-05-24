@@ -1,4 +1,7 @@
-# Ebook Belajar HTML dan CSS Gratis
+---
+title: Ebook Belajar HTML dan CSS Gratis
+layout: Page
+---
 
 Ebook Belajar HTML dan CSS : “Tutorial Fundamental dalam Mempelajari HTML dan CSS” merupakan panduan bagi para pemula yang ingin memperdalam dunia web design. Disamping kemampuan dalam mendesain web, kemampuan untuk Menerjemahkan desain kedalam barisan kode HTML dan CSS merupakan nilai tambah bagi seorang Web Designer.
 
@@ -19,7 +22,6 @@ Pada bab ini akan dibahas aplikasi apa saya yang biasa digunakan untuk membangun
 
 Akan membahas tentang apa itu HTML, bagaimana cara pembuatan file HTML, apa itu tag, apa itu attribute dan pengenalan dasar lainnnya tentang HTML.
 
-contoh studi kasus dalam ebook HTML dan CSS
 ✅ **Study Kasus Konversi Desain ke dalam HTML**
 
 Setelah diperkenalkan dengan HTML, anda akan diajak untuk belajar menerjemahkan sebuah desain website ke dalam bahasa HTML.
@@ -63,4 +65,4 @@ Jadi sudah siapkah anda untuk mempelajari HTML dan CSS? tunggu apa lagi download
 
 Akhir kata semoga buku ini bisa bermanfaat, menambah ilmu dan mampu menambah skill anda untuk kedepannya.
 
-[Download Ebook](https://drive.google.com/open?id=1PKILHgpmhAIcP2QbTq4UAwGAzUnfT_vB)
+<a href="https://bit.ly/ebook-belajar-html-css-ariona" class="button">Download Ebook</a>

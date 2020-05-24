@@ -1,5 +1,5 @@
 <template>
-  <div class="page" id="js-scroll">
+  <div class="page page-single">
     <div class="post-single">
       <article
         class="post-single-wrap"
@@ -17,8 +17,6 @@
         </div>
         <footer class="post-footer">
           <Newsletter v-if="$service.email.enabled" />
-
-          <Comment />
         </footer>
       </article>
     </div>
@@ -28,19 +26,20 @@
 <script>
 import Toc from '@theme/components/Toc.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
-import { Comment } from '@vuepress/plugin-blog/lib/client/components'
 
 export default {
   components: {
     Toc,
     PostMeta,
-    Comment,
     Newsletter: () => import('@theme/components/Newsletter.vue'),
   }
 }
 </script>
 
 <style lang="scss">
+.page-single {
+  padding-top: 160px;
+}
 .post-single-wrap {
   max-width: var(--contentMaxWidth);
   margin: 0 auto;

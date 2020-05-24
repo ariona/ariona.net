@@ -31,7 +31,7 @@
         <span itemprop="name">{{ author }}</span>
       </strong>
       <div class="author-bio" v-if="$themeConfig.authorBio">{{ $themeConfig.authorBio }}</div>
-      <span>{{readingTime}}</span> – 
+      <span>{{readingTime}}</span><span> – </span>
       <span v-if="date" class="ui-post-meta ui-post-date">
         <time
           pubdate

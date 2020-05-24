@@ -1,5 +1,5 @@
 <template>
-  <div class="homepage" id="js-scroll" data-scroll-container>
+  <div class="homepage" data-scroll-container>
     <!-- <div class="cursor"></div> -->
     <div data-scroll-section class="homepage-hero">
       <span class="hello-bg">HELLO</span>

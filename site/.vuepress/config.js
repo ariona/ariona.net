@@ -21,9 +21,8 @@ module.exports = {
         link: "/projects/"
       },
       {
-        text: "Let's work together",
-        link: "/contact/",
-        style: "button"
+        text: "Contact",
+        link: "/contact/"
       }
     ],
     smoothScroll: true,

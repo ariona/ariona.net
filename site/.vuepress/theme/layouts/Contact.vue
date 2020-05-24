@@ -281,18 +281,7 @@ export default {
   .text-right {
     text-align: right;
   }
-  button {
-    background: var(--accentColor);
-    font-weight: 700;
-    padding: 10px 15px;
-    text-transform: uppercase;
-    color: white;
-    border: none;
-    font-family: inherit;
-    font-size: inherit;
-    letter-spacing: 2px;
-    border-radius: 5px;
-  }
+  
 }
 
 </style>

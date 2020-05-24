@@ -1,12 +1,12 @@
 <template>
   <div class="site-header" :style="{'--contentColor': $page.frontmatter.coverTextColor}">
-    <div class="site-brand">
+    <a class="site-brand" href="/">
       <img class="site-logo" src="/assets/img/alogo.svg" alt="ariona.net">
       <div class="site-title">
         <h1>Rian Ariona</h1>
         <small>Frontend Web Developer</small>
       </div>
-    </div>
+    </a>
     
     <nav v-if="$themeConfig.nav" class="site-navigation">
       <NavLink
@@ -33,16 +33,14 @@ export default {
   width: 100%;
   top: 0;
   left: 0;
-  padding: 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   z-index: 69;
   transition: background .3s ease, padding .3s ease, backdrop-filter .3s ease;
+  padding-right: 30px;
 
   .scrolled &{
     background: rgba(255,255,255,.9);
-    padding: 10px 30px;
     color: #333;
     box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.06);
 
@@ -57,13 +55,19 @@ export default {
   }
 
   @media screen and (max-width: 768px) {
-    padding: 15px!important;
+    padding: 15px 15px 15px 0!important;
   }
 }
 .site-brand {
   display: flex;
   align-items: center;
   transition: .3s ease;
+  text-decoration: none;
+  padding: 15px 30px;
+
+  @media screen and (max-width: 768px) {
+    padding: 15px!important;
+  }
 }
 .site-logo {
   width: 60px;
@@ -88,6 +92,9 @@ export default {
 }
 .site-navigation {
   font-weight: 700;
+  margin-left: auto;
+  display: flex;
+
 
   @media screen and (max-width: 990px){
     display: none;
@@ -98,6 +105,9 @@ export default {
     color: var(--contentColor, #000);
     text-decoration: none;
     padding: 10px 15px;
+    display: flex;
+    align-items: center;
+
     &:last-child { padding-right: 0; }
 
     &:hover{
@@ -110,7 +120,18 @@ export default {
   }
 }
 .search-box {
-  @media screen and (max-width: 768px) {
+  margin-left: 30px;
+  display: none;
+  position: relative;
+
+  .blog-index &,
+  .page-blog &,
+  .page-post-single &{
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 990px) {
     display: none;
   }
   input {
@@ -118,6 +139,7 @@ export default {
     border-radius: 4px;
   }
   .suggestions {
+    top: 100%;
     right: 0;
     color: #000;
     width: 400px;

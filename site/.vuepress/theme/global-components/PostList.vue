@@ -1,5 +1,5 @@
 <template>
-  <div class="post-index" id="js-scroll">
+  <div class="post-index">
 
     <div class="hero" data-scroll-section v-if="$pagination._currentPage.path == '/blog/'">
       <div class="hero-container">
@@ -11,7 +11,7 @@
         <div class="hero-detail">
           <span>Download Ebook Gratis</span>
           <h2>Belajar HTML & CSS<br/><small>"Tutorial Fundamental dalam Mempelajari HTML & CSS"</small></h2>
-          <a href="#">Baca Selengkapnya </a>
+          <a href="/ebook-belajar-html-dan-css">Baca Selengkapnya </a>
         </div>
       </div>
     </div>
@@ -23,39 +23,12 @@
         <h2 class="section-title">Blog & Tutorial</h2>
       </div>
 
-      <article
+      <PostItem
         :key="page.key"
         v-for="page in pages"
-        class="post"
-        itemprop="blogPost"
-        itemtype="https://schema.org/BlogPosting">
-        <meta itemprop="mainEntityOfPage" :content="page.path" />
+        :data="page"
+      />
 
-        <!-- <figure v-if="!page.frontmatter.thumbnail" class="featured-image" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
-          <NavLink :link="page.path" style="padding-bottom:62.8%">
-            <img class="lazyload loaded" :src="page.frontmatter.thumbnail" :alt="page.title" itemprop="image" width="250" height="157" data-was-processed="true">
-          </NavLink>
-          <meta itemprop="url" content="page.frontmatter.thumbnail">
-          <meta itemprop="width" content="250">
-          <meta itemprop="height" content="194">
-        </figure> -->
-
-        <div class="post-detail">
-          <h1 class="post-title" itemprop="name headline">
-            <NavLink :link="page.path">{{page.title}}</NavLink>
-          </h1>
-
-          <div class="post-summary" itemprop="description">
-            <p>{{ page.frontmatter.summary || page.summary }}</p>
-          </div>
-          <PostMeta
-            :author="page.frontmatter.author"
-            :authorEmail="page.frontmatter.email"
-            :date="page.frontmatter.date"/>
-        </div>
-
-        <NavLink :link="page.path" class="more-link">Baca selengkapnya</NavLink>
-      </article>
     </div>
 
     <div data-scroll-section class="post-pagination">
@@ -77,8 +50,8 @@
 import 'dayjs/locale/id'
 import Vue from 'vue'
 import dayjs from 'dayjs'
-import PostMeta from '@theme/components/PostMeta.vue'
-import { NavigationIcon, ClockIcon, TagIcon } from 'vue-feather-icons'
+import PostItem from '@theme/components/PostItem'
+
 import {
   Pagination,
   SimplePagination,
@@ -87,7 +60,7 @@ import {
 dayjs.locale('id')
 
 export default {
-  components: { PostMeta, NavigationIcon, ClockIcon, TagIcon },
+  components: { PostItem },
 
   data() {
     return {
@@ -146,10 +119,10 @@ body:not(.scrolled) .blog-index .site-header{
 }
 
 .post-list {
-  max-width: var(--contentMaxWidth);
-  margin: 60px auto 0;
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width     : var(--contentMaxWidth);
+  margin        : 60px auto 0;
+  padding-left  : 15px;
+  padding-right : 15px;
 
   .page-blog & {
     padding-top: 80px;
@@ -230,43 +203,7 @@ body:not(.scrolled) .blog-index .site-header{
     font-weight: 700;
   }
 }
-.post {
-  box-shadow: 0px 1px 2px rgba(46,41,51,0.08), 0px 2px 4px rgba(71,63,79,0.08);
-  transition: transform .3s ease, box-shadow .3s ease;
-  position: relative;
-  padding: 40px;
-  color: #78757a;
-  background: white;
-  border-radius: 4px;
 
-  &:not(:last-child){ margin-bottom: 2em; }
-
-  &:hover{
-    box-shadow: 0px 4px 8px rgba(46,41,51,0.08), 0px 8px 16px rgba(71,63,79,0.16);
-    transform: translate3d(0, -0.25px, 0);
-  }
-
-  &-title {
-    margin: 0 0 15px;
-    font-size: 1.5em;
-    font-weight: 700;
-
-    a {
-      color: #000;
-      text-decoration: none;
-    }
-  }
-
-  .more-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-indent: -9999px;
-    overflow: hidden;
-  }
-}
 .post-pagination {
   display: flex;
   justify-content: space-between;

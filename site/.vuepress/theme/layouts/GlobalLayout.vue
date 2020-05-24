@@ -23,7 +23,7 @@ export default {
     pageClass() {
       const path = this.$page.path.replace(/\//g," ").trim().split(" ");
 
-      if ( this.$page.frontmatter.layout == "Post" ) return
+      if ( this.$page.frontmatter.layout == "Post" ) return "page-post-single"
 
       if ( path.length > 1 ) {
         return `page-${path[0]} `
