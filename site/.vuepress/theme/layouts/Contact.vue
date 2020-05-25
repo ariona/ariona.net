@@ -21,11 +21,15 @@
       class="form"
       method="post"
       data-netlify="true"
-      data-netlify-recaptcha="true"
-      name="contact"
+      data-netlify-honeypot="email"
+      name="contact"      
       @submit.prevent="handleSubmit">
       
       <input type="hidden" name="form-name" value="contact" />
+
+      <div class="madu-manis">
+        <input type="text" name="email">
+      </div>
 
       <div class="field">
         <label>Your name</label>
@@ -49,10 +53,6 @@
       <div class="field">
         <label>Message</label>
         <textarea name="message" v-model="form.message" rows="5" placeholder="What's your message?" required autocomplete="new-password"></textarea>
-      </div>
-
-      <div class="field">
-        <div data-netlify-recaptcha="true"></div>
       </div>
 
       <div class="field text-right">
@@ -174,14 +174,13 @@ export default {
         )
         .join("&");
     },
-    handleSubmit (event) {
+    handleSubmit () {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
       axios.post("/contact/",
         this.encode({
           "form-name": "contact",
-          "g-recaptcha-response": document.getElementById('g-recaptcha-response').value,
           ...this.form
         }),
         axiosConfig
