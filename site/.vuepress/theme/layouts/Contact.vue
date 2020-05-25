@@ -28,7 +28,7 @@
       <input type="hidden" name="form-name" value="contact" />
 
       <div class="madu-manis">
-        <input type="text" name="email">
+        <input type="text" name="email" v-model="form.email">
       </div>
 
       <div class="field">
@@ -38,7 +38,7 @@
 
       <div class="field">
         <label>Your email</label>
-        <input name="email_address" v-model="form.email" type="email" placeholder="What is your email" required autocomplete="new-password">
+        <input name="email_address" v-model="form.email_address" type="email" placeholder="What is your email" required autocomplete="new-password">
       </div>
 
       <div class="field">
@@ -107,7 +107,8 @@ export default {
     return {
       form : {
         name: '',
-        email: '',
+        email:'',
+        email_address: '',
         service: 'Need help with a Project',
         message: ''
       },
