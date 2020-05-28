@@ -68,40 +68,16 @@
 import axios from 'axios'
 import {
   CodepenIcon,
-  CodesandboxIcon,
-  FacebookIcon,
   GithubIcon,
-  GitlabIcon,
-  GlobeIcon,
-  InstagramIcon,
   LinkedinIcon,
   MailIcon,
-  MessageSquareIcon,
-  MusicIcon,
-  PhoneIcon,
-  TwitterIcon,
-  VideoIcon,
-  YoutubeIcon,
-  ArrowUpIcon
 } from 'vue-feather-icons'
 export default {
   components: {
     CodepenIcon,
-    CodesandboxIcon,
-    FacebookIcon,
     GithubIcon,
-    GitlabIcon,
-    GlobeIcon,
-    InstagramIcon,
     LinkedinIcon,
-    MailIcon,
-    MessageSquareIcon,
-    MusicIcon,
-    PhoneIcon,
-    TwitterIcon,
-    VideoIcon,
-    YoutubeIcon,
-    ArrowUpIcon
+    MailIcon
   },
   data() {
     return {
@@ -136,34 +112,12 @@ export default {
       switch (contactType) {
         case 'codepen':
           return 'CodepenIcon'
-        case 'codesandbox':
-          return 'CodesandboxIcon'
-        case 'facebook':
-          return 'FacebookIcon'
         case 'github':
           return 'GithubIcon'
-        case 'gitlab':
-          return 'GitlabIcon'
-        case 'instagram':
-          return 'InstagramIcon'
         case 'linkedin':
           return 'LinkedinIcon'
         case 'mail':
           return 'MailIcon'
-        case 'messenger':
-          return 'MessageSquareIcon'
-        case 'music':
-          return 'MusicIcon'
-        case 'phone':
-          return 'PhoneIcon'
-        case 'twitter':
-          return 'TwitterIcon'
-        case 'video':
-          return 'VideoIcon'
-        case 'web':
-          return 'GlobeIcon'
-        case 'youtube':
-          return 'YoutubeIcon'
         default:
           return ''
       }

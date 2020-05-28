@@ -47,6 +47,11 @@ module.exports = {
           type: 'linkedin',
           link: 'https://www.linkedin.com/in/ariona/',
           text: 'LinkedIn'
+        },
+        {
+          type: 'mail',
+          link: 'mailto:helloariona@gmail.com',
+          text: 'helloariona@gmail.com'
         }
       ]
     }
