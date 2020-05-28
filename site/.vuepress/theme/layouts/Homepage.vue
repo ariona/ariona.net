@@ -181,5 +181,9 @@ export default {
     opacity: 1;
     visibility: visible;
   }
+
+  @media screen and (max-width: 990px) {
+    display: none;
+  }
 }
 </style>
