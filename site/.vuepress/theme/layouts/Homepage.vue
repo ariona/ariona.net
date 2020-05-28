@@ -156,8 +156,13 @@ export default {
     user-select: none;
 
     @media screen and (max-width: 768px) {
-      font-size: 2em
+      font-size: 1.5em;
+      text-align: left;
     }
+  }
+  @media screen and (max-width: 768px) {
+    min-height: auto;
+    padding: 200px 0 160px;
   }
 }
 .hello-bg{
