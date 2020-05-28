@@ -2,7 +2,7 @@
 title: Themezy
 date: "2015-07-01"
 summary: Themezy is a HTML & CSS Website Templates provider that be downloaded for free
-cover: "/assets/img/projects/themezy.jpg"
+cover: "/assets/img/projects/themezy.webp"
 coverColor: "#3a7e31"
 coverTextColor: white
 scroller: true

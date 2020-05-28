@@ -2,7 +2,7 @@
 
 title: "UKM Digital Builder"
 summary: "UKM Digital is a website builder platform for small to medium size business. With it's block based editor it's never been easy to create a website. Just select block design, edit the content and publish it."
-cover: /assets/img/projects/ukm.png
+cover: /assets/img/projects/ukm.webp
 style: margin-left:-45px
 coverColor: "#4e5ef0"
 coverTextColor: white

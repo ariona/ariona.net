@@ -6,7 +6,7 @@
       <div class="project-desc">
         <p>{{data.frontmatter.summary}}</p>
       </div>
-      <a class="project-link" :href="data.path">Learn More <arrow-right-icon size="1.5x" class="custom-class"></arrow-right-icon></a>
+      <a class="project-link" :href="data.path">Learn More <span class="screen-reader-text">About {{data.frontmatter.title}}</span><arrow-right-icon size="1.5x" class="custom-class"></arrow-right-icon></a>
     </div>
     <figure class="project-image" v-if="!data.frontmatter.scroller">
 
