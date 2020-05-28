@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <NavLink link="/contact/" class="fab contact-button"><mail-icon size="1.5x" class="custom-class"></mail-icon></NavLink>
+    <NavLink aria-label="Contact Me" link="/contact/" class="fab contact-button"><mail-icon size="1.5x" class="custom-class"></mail-icon></NavLink>
     <div @click="backToTop" class="fab back-2-top"><arrow-up-icon size="1.5x" class="custom-class"></arrow-up-icon></div>
     <div @click="toggleMobileMenu" class="fab mobile-menu-button">
       <align-right-icon size="1.5x" class="icon-menu" v-if="!mobileMenuActive"></align-right-icon>

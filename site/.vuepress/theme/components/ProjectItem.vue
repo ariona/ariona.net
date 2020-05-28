@@ -9,7 +9,8 @@
       <a class="project-link" :href="data.path">Learn More <arrow-right-icon size="1.5x" class="custom-class"></arrow-right-icon></a>
     </div>
     <figure class="project-image" v-if="!data.frontmatter.scroller">
-      <img :src="data.frontmatter.cover" alt="" :style="data.frontmatter.style">
+
+      <img-lazy :src="data.frontmatter.cover" alt="" :style="data.frontmatter.style" />
     </figure>
     <div class="project-image" v-else>
       <div class="image-scroller themezy" :style="{backgroundImage:`url(${data.frontmatter.cover})`}"></div>

@@ -33,7 +33,7 @@
             <div class="project-desc">
               <p>It's an <strong>Utility Style Framework</strong> for rapidly building React Native's User Interface. You now can style your React Native App with utility class just like tailwind.css</p>
             </div>
-            <a class="project-link" target="_blank" href="https://ariona.github.io/rn-utility-style/">Learn more</a>
+            <a class="project-link" target="_blank" rel="noreferrer" href="https://ariona.github.io/rn-utility-style/">Learn more</a>
           </div>
           <figure class="project-image">
             <img src="/assets/img/projects/rn-utility-style.png" alt="">

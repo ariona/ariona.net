@@ -1,4 +1,9 @@
-export default ({ router }) => {
+import ImgLazy from 'vuepress-plugin-img-lazy/ImgLazy'
+
+export default ({ Vue, router }) => {
+
+  Vue.component(ImgLazy.name, ImgLazy)
+
   router.addRoutes([
     { path: '/8-situs-pencarian-icon-terbaik', redirect: '/situs-pencarian-icon-terbaik' },
     { path: '/5-online-image-editor-just-like-photoshop', redirect: '/online-image-editor-just-like-photoshop' },
@@ -9,4 +14,5 @@ export default ({ router }) => {
     { path: '/5-aplikasi-web-server-pilihan-untuk-perangkat-android-anda', redirect: '/aplikasi-web-server-pilihan-untuk-perangkat-android-anda' },
     { path: '/5-situs-untuk-membuat-background-pattern', redirect: '/situs-untuk-membuat-background-pattern' },
   ])
+
 }

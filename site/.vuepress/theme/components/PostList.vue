@@ -5,7 +5,7 @@
       <div class="hero-container">
         <div class="hero-image">
           <div class="image-wrapper" style="padding-bottom:115.6%">
-            <img src="/assets/img/cover-pat.png">
+            <img-lazy src="/assets/img/cover-pat.png" />
           </div>
         </div>
         <div class="hero-detail">

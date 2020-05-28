@@ -1,7 +1,11 @@
 module.exports = {
   title: 'ariona.net', // Title for the site. This will be displayed in the navbar.
   head: [
-    ['link', { rel: 'icon', href: '/logo.png' }]
+    ['link', { rel: 'icon', href: '/logo.png' }],
+    ['meta', {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1'
+    }]
   ],
   themeConfig: {
     summaryLength: 300,
@@ -49,6 +53,7 @@ module.exports = {
   },
   plugins: [
     'demo-block',
+    'img-lazy',
     ['vuepress-plugin-reading-time'],
     [
       '@vuepress/blog',
@@ -59,18 +64,6 @@ module.exports = {
             dirname: '_posts',
             path: '/blog/',
             itemPermalink: '/:slug',
-            pagination: {
-              lengthPerPage: 10,
-              prevText: 'Sebelumnya',
-              nextText: 'Selanjutnya'
-            },
-          },
-          {
-            id: 'page',
-            dirname: '_pages',
-            path: '/pages/',
-            itemPermalink: '/page/:slug',
-            itemLayout: 'Page',
             pagination: {
               lengthPerPage: 10,
               prevText: 'Sebelumnya',
