@@ -87,7 +87,6 @@ export default {
 .site-brand small {
   font-size: 1em;
   font-weight: 400;
-  opacity: 0.7;
   color: var(--contentColor, #000);
 }
 .site-navigation {

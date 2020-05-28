@@ -46,12 +46,19 @@
 </template>
 
 <script>
-import { ArrowRightIcon } from 'vue-feather-icons'
 import Project from '@theme/components/ProjectItem'
 
 export default {
 
-  components: {ArrowRightIcon, Project},
+  components: {Project},
+
+  mounted() {
+    window.addEventListener( 'load', this.itsLoaded )
+  },
+
+  destroyed() {
+    window.removeEventListener( 'load', this.itsLoaded )
+  },
 
   data() {
     return {
@@ -91,6 +98,12 @@ export default {
       ]
     }
   },
+
+  methods: {
+    itsLoaded() {
+      document.body.classList.add('loaded')
+    }
+  }
 
 }
 </script>
@@ -160,5 +173,13 @@ export default {
   font-weight: 900;
   text-shadow: 0 30px 100px rgba(0,0,0,.08);
   user-select: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease;
+
+  .loaded & {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 </style>

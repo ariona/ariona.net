@@ -5,7 +5,7 @@
       <div class="hero-container">
         <div class="hero-image">
           <div class="image-wrapper" style="padding-bottom:115.6%">
-            <img-lazy src="/assets/img/cover-pat.png" />
+            <img-lazy src="/assets/img/cover-pat.png" alt="Ebook HTML & CSS" />
           </div>
         </div>
         <div class="hero-detail">
@@ -35,8 +35,8 @@
       <component :is="paginationComponent" v-if="$pagination.length > 1 && paginationComponent" />
       
       <div class="pagination-select">
-        <span>Halaman ke </span>
-        <select :value="$pagination._currentPage.path" @change="changePage">
+        <label for="pagination-select">Halaman ke </label>
+        <select id="pagination-select" :value="$pagination._currentPage.path" @change="changePage">
           <option v-for="(page, index) in $pagination._paginationPages" :value="page.path">{{index+1}}</option>
         </select>
         <span> dari {{$pagination.length}}</span>
@@ -216,12 +216,14 @@ body:not(.scrolled) .blog-index .site-header{
   select {
     height: 2em;
     width: 3em;
-    background-color: #fbfbfb;
-    border: none;
+    border: 1px solid #e3e3e3;
+    background-color: transparent;
+    text-align: center;
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     padding: 0 5px;
+    font-weight: 700;
   }
 }
 .pagination {
