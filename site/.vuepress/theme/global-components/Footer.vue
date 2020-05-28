@@ -1,10 +1,10 @@
 <template>
   <footer class="footer">
-    <NavLink aria-label="Contact Me" link="/contact/" class="fab contact-button"><mail-icon size="1.5x" class="custom-class"></mail-icon></NavLink>
-    <div @click="backToTop" class="fab back-2-top"><arrow-up-icon size="1.5x" class="custom-class"></arrow-up-icon></div>
+    <NavLink aria-label="Contact Me" link="/contact/" class="fab contact-button"><i class="icon-mail"></i></NavLink>
+    <div @click="backToTop" class="fab back-2-top"><i class="icon-arrow-up"></i></div>
     <div @click="toggleMobileMenu" class="fab mobile-menu-button">
-      <align-right-icon size="1.5x" class="icon-menu" v-if="!mobileMenuActive"></align-right-icon>
-      <x-icon size="1.5x" class="icon-class" v-else></x-icon>
+      <i class="icon-align-right icon-menu" v-if="!mobileMenuActive"></i>
+      <i class="icon-x" v-else></i>
     </div>
     <div v-if="copyright" class="copyright" v-html="copyright"></div>
 
@@ -13,22 +13,10 @@
 </template>
 
 <script>
-import {
-  MailIcon,
-  ArrowUpIcon,
-  AlignRightIcon,
-  XIcon
-} from 'vue-feather-icons'
 import MobileMenu from '@theme/components/MobileMenu'
 
 export default {
-  components: {
-    MailIcon,
-    ArrowUpIcon,
-    AlignRightIcon,
-    XIcon,
-    MobileMenu
-  },
+  components: { MobileMenu },
 
   data(){
     return {
@@ -80,6 +68,8 @@ export default {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    text-decoration: none;
+    font-size: 24px;
 
     &.contact-button{
       left: 30px;

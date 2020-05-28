@@ -8,7 +8,7 @@ module.exports = {
     }]
   ],
   themeConfig: {
-    summaryLength: 300,
+    summaryLength: 200,
     paginationComponent: 'SimplePagination',
     authorBio: 'Papah nya azka, Front end developer dari Bandung – Indonesia. Suka terjemahin Photoshop ke HTML & CSS, Suka main vue.js sama React Native juga 😉',
     nav: [
@@ -89,15 +89,15 @@ module.exports = {
             }
           }
         ],
-        frontmatters: [
-          {
-            id: 'tag',
-            keys: ['tag','tags'],
-            path: '/tag/',
-            layout: 'Tags',
-            scopeLayout: 'Tag'
-          },
-        ],
+        // frontmatters: [
+        //   {
+        //     id: 'tag',
+        //     keys: ['tag','tags'],
+        //     path: '/tag/',
+        //     layout: 'Tags',
+        //     scopeLayout: 'Tag'
+        //   },
+        // ],
         sitemap: {
           hostname: 'https://ariona.net'
         },

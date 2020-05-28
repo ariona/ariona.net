@@ -6,7 +6,7 @@
       <div class="project-desc">
         <p>{{data.frontmatter.summary}}</p>
       </div>
-      <a class="project-link" :href="data.path">Learn More <span class="screen-reader-text">About {{data.frontmatter.title}}</span><arrow-right-icon size="1.5x" class="custom-class"></arrow-right-icon></a>
+      <a class="project-link" :href="data.path">Learn More <span class="screen-reader-text">About {{data.frontmatter.title}}</span><i class="icon-arrow-right"></i></a>
     </div>
     <figure class="project-image" v-if="!data.frontmatter.scroller">
 
@@ -19,10 +19,8 @@
 </template>
 
 <script>
-import { ArrowRightIcon } from 'vue-feather-icons'
 import dayjs from 'dayjs'
 export default {
-  components: { ArrowRightIcon },
   props: {
     data: Object,
     imgStyle: Object,
@@ -99,8 +97,9 @@ export default {
     align-items: center;
     text-decoration: none;
 
-    svg {
+    i {
       margin-left: 15px;
+      font-size: 24px;
     }
   }
 

@@ -11,7 +11,7 @@
           class="contact-item"
         >
           <NavLink :link="item.link">
-            <component :is="item.iconComponent"></component>
+            <i :class="item.iconComponent"></i>
             <span>{{ item.text }}</span>
           </NavLink>
         </li>
@@ -66,19 +66,7 @@
 
 <script>
 import axios from 'axios'
-import {
-  CodepenIcon,
-  GithubIcon,
-  LinkedinIcon,
-  MailIcon,
-} from 'vue-feather-icons'
 export default {
-  components: {
-    CodepenIcon,
-    GithubIcon,
-    LinkedinIcon,
-    MailIcon
-  },
   data() {
     return {
       form : {
@@ -111,13 +99,13 @@ export default {
     getIconComponentName(contactType) {
       switch (contactType) {
         case 'codepen':
-          return 'CodepenIcon'
+          return 'icon-codepen'
         case 'github':
-          return 'GithubIcon'
+          return 'icon-github'
         case 'linkedin':
-          return 'LinkedinIcon'
+          return 'icon-linkedin'
         case 'mail':
-          return 'MailIcon'
+          return 'icon-mail'
         default:
           return ''
       }
@@ -191,7 +179,7 @@ export default {
       text-decoration: none;
     }
 
-    svg {
+    i {
       color: var(--accentColor);
       vertical-align: middle;
       display: inline-block;
