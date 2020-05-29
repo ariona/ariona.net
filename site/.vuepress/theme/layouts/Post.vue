@@ -32,8 +32,6 @@
           
         </div>
         <footer class="post-footer">
-          <Newsletter v-if="$service.email.enabled" />
-
           <Comment />
         </footer>
       </div>
@@ -56,7 +54,7 @@ export default {
     Toc,
     PostMeta,
     Comment,
-    Newsletter: () => import('@theme/components/Newsletter.vue'),
+    // Newsletter: () => import('@theme/components/Newsletter.vue'),
   },
 
   computed: {

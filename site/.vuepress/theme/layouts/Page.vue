@@ -15,9 +15,6 @@
           <Toc />
           <Content itemprop="articleBody" />
         </div>
-        <footer class="post-footer">
-          <Newsletter v-if="$service.email.enabled" />
-        </footer>
       </article>
     </div>
   </div>
@@ -31,7 +28,7 @@ export default {
   components: {
     Toc,
     PostMeta,
-    Newsletter: () => import('@theme/components/Newsletter.vue'),
+    // Newsletter: () => import('@theme/components/Newsletter.vue'),
   }
 }
 </script>

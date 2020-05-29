@@ -4,8 +4,7 @@
     <div data-scroll-section class="homepage-hero">
       <span class="hello-bg">HELLO</span>
       <div class="container">
-        <h2 class="hero-text">I am a Frontend developer who loves to translate designs files into Web Application <br/>– Based in Bandung - Indonesia</h2>
-        
+        <div class="hero-text">I am a Frontend developer who loves to translate designs files into Web Application <br/>– Based in Bandung - Indonesia</div>
       </div>
     </div>
 
@@ -154,6 +153,7 @@ export default {
     border-bottom: none;
     padding-bottom: 0;
     user-select: none;
+    color: var(--darkTextColor);
 
     @media screen and (max-width: 768px) {
       font-size: 1.5em;

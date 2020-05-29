@@ -1,3 +1,5 @@
+const Critters = require('critters-webpack-plugin');
+
 module.exports = {
   title: 'ariona.net', // Title for the site. This will be displayed in the navbar.
   head: [
@@ -68,7 +70,7 @@ module.exports = {
             id: 'post',
             dirname: '_posts',
             path: '/blog/',
-            itemPermalink: '/:slug',
+            itemPermalink: '/blog/:slug',
             pagination: {
               lengthPerPage: 10,
               prevText: 'Sebelumnya',
@@ -130,5 +132,5 @@ module.exports = {
         'ga': 'UA-22811026-1'
       }
     ]
-  ]
+  ],
 }

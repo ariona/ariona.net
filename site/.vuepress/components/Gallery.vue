@@ -1,13 +1,17 @@
 <template>
-  <client-only>
-    <vue-picture-swipe :class="`gallery ${'frame-' + frame}`" :items="pictures"></vue-picture-swipe>
-  </client-only>
+  <div class="gallery">
+    <figure v-for="image in pictures">
+      <a target="_blank" :href="image.src">
+        <img-lazy :src="image.thumbnail" :alt="image.filename"/>
+      </a>
+    </figure>
+  </div>
 </template>
 
 <script>
-import VuePictureSwipe from 'vue-picture-swipe';
+// import VuePictureSwipe from 'vue-picture-swipe';
 export default {
-  components: { VuePictureSwipe },
+  // components: { VuePictureSwipe },
   props: {
     folder: String,
     images: Array,
@@ -30,7 +34,7 @@ export default {
 
 </script>
 <style lang="scss">
-.my-gallery{
+.gallery{
   display: flex;
   flex-wrap: wrap;
   margin: 60px -10px;
