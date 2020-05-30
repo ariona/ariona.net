@@ -5,7 +5,6 @@
   },
   "devDependencies": {
     "@vuepress/plugin-blog": "^1.9.2",
-    "@vuepress/plugin-google-analytics": "^1.5.0",
     "@vuepress/plugin-search": "^1.5.0",
     "axios": "^0.19.2",
     "critters-webpack-plugin": "^2.5.0",
@@ -22,6 +21,7 @@
     "vuepress-plugin-disqus": "^0.2.0",
     "vuepress-plugin-img-lazy": "^1.0.3",
     "vuepress-plugin-medium-zoom": "^1.1.8",
+    "vuepress-plugin-minimal-analytics": "^0.1.4",
     "vuepress-plugin-reading-time": "^0.1.1"
   },
   "dependencies": {}

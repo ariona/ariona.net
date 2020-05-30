@@ -126,11 +126,6 @@ module.exports = {
         },
       },
     ],
-    [
-      '@vuepress/google-analytics',
-      {
-        'ga': 'UA-22811026-1'
-      }
-    ]
+    ['minimal-analytics', {ga: 'UA-22811026-1'}]
   ],
 }
