@@ -1,15 +1,6 @@
 ---
-title: "Mencicipi Property backdrop-filter dari Webkit"
-date: "2016-05-26"
-author: Ariona Rian
-email: helloariona@gmail.com
-thumbnail: /assets/img/thumbnail.png
-tags: 
-  - css-filter
-  - translucent
-categories: 
-  - html-css
-  - tutorial
+title: Mencicipi Property backdrop-filter dari Webkit
+thumbnail: /site/.vuepress/dist/01-07-2013%25207-28-40.png
 ---
 
 CSS3 membawa beberapa property yang sangat mendukung untuk pembuatan tampilan User Interface yang unik seperti halnya backdrop-filter yang akan kita bahas dalam artikel ini. Namun ada juga beberapa property unofficial atau tidak resmi dari tiap browser vendor.
