@@ -1,19 +1,29 @@
 {
   "scripts": {
     "site:dev": "vuepress dev site",
-    "site:build": "vuepress build site"
+    "site:build": "vuepress build site",
+    "preview:build": "rollup --config"
   },
   "devDependencies": {
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-search": "^1.5.0",
     "axios": "^0.19.2",
+    "babel-plugin-prismjs": "^2.0.1",
     "critters-webpack-plugin": "^2.5.0",
     "dayjs": "^1.8.27",
     "html-webpack-plugin": "^4.3.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
+    "markdown-it": "^11.0.0",
     "md5": "^2.2.1",
     "node-sass": "^4.14.1",
+    "prismjs": "^1.20.0",
+    "rollup": "^2.12.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "sass-loader": "^8.0.2",
     "vue-picture-swipe": "^1.2.0",
     "vuepress": "^1.5.0",

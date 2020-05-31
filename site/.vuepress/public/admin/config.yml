@@ -10,6 +10,7 @@ collections:
     folder: "site/_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    preview_path: "blog/{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Content", name: "body", widget: "markdown"}
@@ -32,16 +33,17 @@ collections:
     folder: "site/_projects" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    preview_path: "project/{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Content", name: "body", widget: "markdown"}
-      - label: "Thumbnail"
-        name: "thumbnail"
+      - label: "Cover"
+        name: "cover"
         widget: "image"
         media_library:
           config:
             multiple: false
-      - {label: "Summary", name: "summary", widget: "markdown"}
+      - {label: "Summary", name: "summary", widget: "text"}
       - label: "Roles"
         name: "role"
         widget: "list"
