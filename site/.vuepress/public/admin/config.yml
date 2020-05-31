@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: ariona/ariona.net
-  branch: master # Branch to update (optional; defaults to master)
+  branch: netlify-cms # Branch to update (optional; defaults to master)
 media_folder: "site/.vuepress/public/assets/img"
 public_folder: "site/.vuepress/dist/"
 collections:
