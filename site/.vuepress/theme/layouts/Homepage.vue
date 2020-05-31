@@ -35,7 +35,7 @@
             <a class="project-link" target="_blank" rel="noreferrer" href="https://ariona.github.io/rn-utility-style/">Learn more <span class="screen-reader-text">about RN Utility Style</span></a>
           </div>
           <figure class="project-image">
-            <img-lazy src="/assets/img/projects/rn-utility-style.webp" alt="RN Utility Style" />
+            <img-lazy src="/assets/img/rn-utility-style.webp" alt="RN Utility Style" />
           </figure>
         </div>
       </div>
@@ -69,7 +69,7 @@ export default {
             title: 'Tanzil',
             date: '2018-08-78',
             summary: 'Tanzil is an Al-Qur\'an for Android built with React Native Framework. It has beautiful and functional User interface and shipped with features that will help user read and memorise Al-Quran easily.',
-            cover: '/assets/img/projects/tanzil.webp'
+            cover: '/assets/img/tanzil.webp'
           },
           path: '/project/tanzil',
         },
@@ -78,7 +78,7 @@ export default {
             title: 'UKM Digital',
             date: '2020-08-78',
             summary: 'UKM Digital is a website builder platform for small to medium size business. With it\'s block based editor it\'s never been easy to create a website. Just select block design, edit the content and publish it.',
-            cover: '/assets/img/projects/ukm.webp',
+            cover: '/assets/img/ukm.webp',
             style: "margin-left: -40px"
           },
           path: '/project/ukm',
@@ -88,7 +88,7 @@ export default {
             title: 'Themezy',
             date: '2015-08-78',
             summary: 'Themezy is a HTML & CSS Website Templates provider that be downloaded for free',
-            cover: '/assets/img/projects/themezy.webp',
+            cover: '/assets/img/themezy.webp',
             scroller: true
           },
           path: '/project/themezy',

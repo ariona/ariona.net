@@ -3,7 +3,7 @@ backend:
   repo: ariona/ariona.net
   branch: netlify-cms # Branch to update (optional; defaults to master)
 media_folder: "site/.vuepress/public/assets/img"
-public_folder: "site/.vuepress/dist/"
+public_folder: "assets/img"
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
@@ -16,5 +16,34 @@ collections:
       - label: "Thumbnail"
         name: "thumbnail"
         widget: "image"
-        config:
-          multiple: false
+        media_library:
+          config:
+            multiple: false
+      - {label: "Author", name: "author", widget: "string", default: "Ariona Rian"}
+      - {label: "Author Email", name: "email", widget: "string", default: "helloariona@gmail.com"}
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+      - label: "Categories"
+        name: "categories"
+        widget: "list"
+  - name: "project" # Used in routes, e.g., /admin/collections/blog
+    label: "Project" # Used in the UI
+    folder: "site/_projects" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - {label: "Summary", name: "summary", widget: "markdown"}
+      - label: "Roles"
+        name: "role"
+        widget: "list"
+      - {label: "Client", name: "client", widget: "string"}
+      - {label: "URL", name: "url", widget: "string"}

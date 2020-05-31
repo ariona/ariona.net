@@ -13,7 +13,6 @@
 export default {
   // components: { VuePictureSwipe },
   props: {
-    folder: String,
     images: Array,
     thumbnail: Boolean,
     frame: String
@@ -22,8 +21,8 @@ export default {
     pictures() {
       return this.images.map( ({filename, w, h}) => {
         return {
-          src: `/assets/img/projects/${this.folder}/${filename}`,
-          thumbnail: this.thumbnail ? `/assets/img/projects/${this.folder}/thumb-${filename}` : `/assets/img/projects/${this.folder}/${filename}`,
+          src: `/assets/img/${filename}`,
+          thumbnail: this.thumbnail ? `/assets/img/thumb-${filename}` : `/assets/img/${filename}`,
           w,
           h
         }
