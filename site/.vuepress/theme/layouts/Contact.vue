@@ -44,10 +44,9 @@
       <div class="field">
         <label>Service</label>
         <select name="service" v-model="form.service" required>
-          <option value="Just wanted to say hi">Just wanted to say hi</option>
           <option value="Need help with a Project">Need help with a Project</option>
           <option value="Long term partnership">Long term partnership</option>
-          <option value="Want to hide me full-time">Want to hide me full-time</option>
+          <option value="Want to wire me full-time">Want to hire me full-time</option>
         </select>
       </div>
       <div class="field">
