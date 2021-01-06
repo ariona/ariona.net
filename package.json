@@ -6,7 +6,7 @@
   "devDependencies": {
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-search": "^1.5.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "critters-webpack-plugin": "^2.5.0",
     "dayjs": "^1.8.27",
     "html-webpack-plugin": "^4.3.0",
